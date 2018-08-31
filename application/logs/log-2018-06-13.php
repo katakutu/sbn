@@ -1,0 +1,36 @@
+<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+ERROR - 2018-06-13 01:26:25 --> Severity: Parsing Error --> syntax error, unexpected '$lang' (T_VARIABLE) C:\xampp\htdocs\sbn-ro\application\language\en\message_lang.php 772
+ERROR - 2018-06-13 07:16:53 --> Severity: Parsing Error --> syntax error, unexpected '$lang' (T_VARIABLE) C:\xampp\htdocs\sbn-ro\application\language\en\message_lang.php 772
+ERROR - 2018-06-13 11:22:36 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\sbn-ro\application\controllers\Base.php 42
+ERROR - 2018-06-13 17:15:16 --> Severity: Warning --> Invalid argument supplied for foreach() C:\xampp\htdocs\sbn-ro\application\controllers\Base.php 42
+ERROR - 2018-06-13 18:05:06 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 18:05:06 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 18:05:06 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 18:05:30 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 18:05:30 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 18:05:30 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 18:05:56 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 18:05:56 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 18:05:56 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 23:44:31 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:44:31 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:44:31 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 23:44:40 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:44:40 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:44:40 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 23:44:57 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:44:57 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:44:57 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 23:47:24 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:47:24 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:47:24 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 23:48:53 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:48:53 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:48:53 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 23:49:37 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:49:37 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:49:37 --> Could not find the language line "dt_processsing"
+ERROR - 2018-06-13 23:49:43 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:49:43 --> Could not find the language line "dt_page"
+ERROR - 2018-06-13 23:49:43 --> Could not find the language line "dt_processsing"
