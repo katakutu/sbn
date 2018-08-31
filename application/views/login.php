@@ -215,9 +215,9 @@
 			</div>
         </section>
     </main>
-
+   
 </body>
 <footer class="site-footer">
-  <p>Copyright &copy; 2018 Bank Rakyat Indonesia (Persero) Tbk.</p>
+  <p> &copy; 2018 Bank Rakyat Indonesia (Persero) Tbk.</p>
 </footer>
 </html>

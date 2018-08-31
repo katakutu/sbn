@@ -75,9 +75,10 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '10.35.65.191',
+	// 'hostname' => '10.35.65.191',
+	'hostname' => 'localhost',
 	'username' => 'root',
-	'password' => '',
+	'password' => 'root',
 	'database' => 'sbn_ritel_online',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
