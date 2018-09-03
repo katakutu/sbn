@@ -18,6 +18,7 @@ class Base extends CI_Controller {
 		$this->ibank_session->checking_session();
 		$this->sess = $this->session->userdata('session');
 		$this->sessLang = $this->session->userdata('session_lang');
+		$this->load->model('managementcontent_model');
 	}
 
 	function index()
@@ -28,6 +29,7 @@ class Base extends CI_Controller {
 			$data['name_detail'] = '<b>Email 		:</b> xxx'.substr($row->EMAIL, strlen($row->EMAIL) - 15, strlen($row->EMAIL)).'<br />';
 			$data['name_detail'] .= '<b>Last login :</b> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGIN)).'<br />';
 			$data['name_detail'] .= '<b>Last logout :</b> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGOUT)).'<br />';
+			
 			$prev_password = $row->PREVPASSWORD;
 		}
 			$data['header'] = $this->menuheader($this->sess['userid']);
@@ -94,7 +96,7 @@ class Base extends CI_Controller {
 			} else {
 				$data['img'] = "woman";
 			}
-
+			$data['image_content'] = $this->managementcontent_model->get_front();
 			$data['handphone'] = 'xxxxxxxx'.substr($row->HANDPHONE, strlen($row->HANDPHONE) - 4, strlen($row->HANDPHONE));
 			$data['email'] = 'xxx'.substr($row->EMAIL, strlen($row->EMAIL) - 15, strlen($row->EMAIL));
 		}

@@ -894,3 +894,39 @@ $lang['unauthorized investor'] = 'Investor tidak sah';
 
 /*faq*/
 $lang['faq_n_guide'] = 'FAQ & Panduan';
+
+
+/* Tambahan by Indras*/
+$lang['manajemen'] = 'Manajemen';
+$lang['manajemen_content'] = 'Konten';
+$lang['manajemen_content_add'] = 'Tambah Konten';
+$lang['manajemen_content_data'] = 'Data Konten';
+$lang['manajemen_content_form_add'] = 'Form Tambah Konten';
+$lang['manajemen_content_form_update'] = 'Form Update Konten';
+$lang['manajemen_user'] = 'User';
+$lang['manajemen_user_reactivation_link'] = 'Link Aktivasi';
+$lang['manajemen_user_unlock'] = 'Unlock';
+
+
+$lang['report'] = 'Laporan';
+$lang['investor report'] = 'Laporan Investor';
+$lang['customer statistic report'] = 'Laporan Data Statistik Nasabah';
+$lang['customer portofolio report'] = 'Laporan Portofolio Nasabah';
+$lang['transaction report'] = 'Laporan Transaksi';
+$lang['daily sales report'] = 'Laporan Data Penjualan Harian';
+$lang['final transaction report'] = 'Laporan Akhir Transaksi';
+
+$lang['contact us'] = 'Hubungi Kami';
+$lang['faq'] = 'FAQ';
+
+$lang['title'] = 'Judul';
+$lang['image_content'] = 'Gambar Konten';
+$lang['message_image_content'] = 'Format gambar : jpg, jpeg, png dan gif<br>Maksimal file berukuran 2 MB';
+$lang['status'] = 'Status';
+$lang['upload_date'] = 'Tgl Upload';
+$lang['last_update'] = 'Update Terakhir';
+$lang['publish'] = 'Tampilkan';
+$lang['no_publish'] = 'Tidak ditampilkan';
+
+$lang['save_button'] = 'Simpan';
+$lang['success_add_content'] = 'Tambah data konten berhasil';

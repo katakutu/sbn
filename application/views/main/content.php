@@ -27,6 +27,14 @@
 <body oncontextmenu="return false">
 	<?= $this->parameter_helper->login_header ?>
 	<table  style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; background-color: #fff; border: 1px; box-shadow: 1px 1px 10px #888888; width: 100%; padding: 20px">
+		<?php 
+			 if($image_content!=''){
+				  		echo '<tr> 
+								<td colspan="2"><img src="'.base_url().'content/'.$image_content.'" class="img-responsive"></td>
+							  </tr>';
+			}
+		?>	
+		<tr>
 		<td id="td_img_person" style="width: 200px">
 			<img id="img_person" src="<?= base_url() ?>images/user/<?= $img ?>.png" alt="person" class="img-responsive">
 		</td>
@@ -34,6 +42,8 @@
 			<h3>
 				<p><?= $this->lang->line('welcome') ?>,&nbsp;<?= $title ?>&nbsp;<b><?= $name ?></b></p>
 			</h3>
+			
+				
 			<table class="table table-striped table-responsive">
 				<tbody>
 					<tr>
@@ -94,6 +104,7 @@
 			    </tbody>
 		    </table>
 		</td>
+	   </tr>
 	</table>
 	<br>
 	<?php if ($notification) { ?>

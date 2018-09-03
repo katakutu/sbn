@@ -9,7 +9,7 @@ class Termscontent extends CI_Model {
 	function get_termscontent($title)
 	{
 		$this->db->where('TITLE', $title);
-		$this->db->where('PUBLISH', '1');
+		$this->db->where('PUBLISH', 1);
 		$query = $this->db->get('termscontent');
 		return $query;
 	}
