@@ -930,3 +930,7 @@ $lang['no_publish'] = 'Tidak ditampilkan';
 
 $lang['save_button'] = 'Simpan';
 $lang['success_add_content'] = 'Tambah data konten berhasil';
+$lang['success_update_content'] = 'Update konten berhasil';
+$lang['success_delete_content'] = 'Hapus konten berhasil';
+$lang['delete_content'] = 'Hapus Konten';
+$lang['confirm_delete_content'] = 'Anda yakin akan menghapus konten ini?';

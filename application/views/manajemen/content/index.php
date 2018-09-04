@@ -79,7 +79,7 @@
 			                    	     	       <td><a href="#" data-toggle="modal" data-target="#changeContent'.$no.'"><i class="fa fa-image"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#updateContent'.$no.'"><i class="fa fa-edit"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#deleteContent'.$no.'"><i class="fa fa-trash"></i></a></td>
 			                    	     		  </tr>';
 			                    	     		  ?>
-			                    	     		  <!-- Modal -->
+			                    	     		    <!-- Modal -->
 													<div id="updateContent<?=$no?>" class="modal fade" role="dialog">
 													  <div class="modal-dialog">
 
@@ -112,6 +112,32 @@
 													      </div>
 													      <div class="modal-footer">
 													      	<button type="submit" class="btn btn-warning"><?php echo $this->lang->line('save_button');?></button> &nbsp;
+													        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('cancel');?></button>
+													      </div>
+													       </form>
+													    </div>
+
+													  </div>
+													</div>
+													<!-- Modal -->
+													<div id="deleteContent<?=$no?>" class="modal fade" role="dialog">
+													  <div class="modal-dialog">
+
+													    <!-- Modal content-->
+													    <div class="modal-content">
+													      <form action="<?php echo base_url();?>Content.jsp/delete" method="post" enctype="multipart/form-data">
+													      	<input type="hidden" name="id" value="<?php echo $value['id'];?>">
+													      <div class="modal-header">
+													        <button type="button" class="close" data-dismiss="modal">&times;</button>
+													        <h4 class="modal-title"><?php echo $this->lang->line('delete_content');?></h4>
+													      </div>
+													      <div class="modal-body">
+													        
+													       <?php echo $this->lang->line('confirm_delete_content');?>
+													       
+													      </div>
+													      <div class="modal-footer">
+													      	<button type="submit" class="btn btn-warning"><?php echo $this->lang->line('yes');?></button> &nbsp;
 													        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('cancel');?></button>
 													      </div>
 													       </form>

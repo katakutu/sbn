@@ -163,8 +163,8 @@ $route['Api.jsp/(:any)'] = 'api/statusbayar/$1';
 /* routes for content */
 $route['Content.jsp'] = 'manajemen/content/index';
 $route['Content.jsp/add'] = 'manajemen/content/add';
-$route['Content.jsp/update/(:num)'] = 'manajemen/content/update/$1';
-$route['Content.jsp/delete/(:num)'] = 'manajemen/content/delete/$1';
+$route['Content.jsp/update'] = 'manajemen/content/update';
+$route['Content.jsp/delete'] = 'manajemen/content/delete';
 
 
 

@@ -952,3 +952,7 @@ $lang['no_publish'] = 'No Publish';
 $lang['save_button'] = 'Save';
 
 $lang['success_add_content'] = 'Add content is success';
+$lang['success_update_content'] = 'Update content is success';
+$lang['success_delete_content'] = 'Delete content is success';
+$lang['delete_content'] = 'Delete Content';
+$lang['confirm_delete_content'] = 'Are you sure want to delete this content?';

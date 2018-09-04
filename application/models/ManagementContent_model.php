@@ -34,7 +34,12 @@ class ManagementContent_model extends CI_Model
     	$path_gambar = $gambar['file_name'];
     	$tgl_upload = date('Y-m-d H:i:s');
     	$status = $this->input->post('status');
-    	$data = array(
+    	if($status == 1){
+            $this->db->set('status', '0');
+            $this->db->where('status', '1');
+            $this->db->update('content');
+        }
+        $data = array(
     		'judul' => $judul,
     		'path_gambar' => $path_gambar,
     		'tgl_upload' => $tgl_upload,
@@ -42,25 +47,64 @@ class ManagementContent_model extends CI_Model
     		'status' => $status 
     	);
     	$this->db->insert('content', $data);
+
     }
 
-    function update($id, $gambar){
+    function change($id,$gambar){
+        $path_gambar = $gambar['file_name'];
+        $last_update = date('Y-m-d H:i:s');
+        $data = array(
+            'path_gambar' => $path_gambar,
+            'last_update' => $tgl_upload
+        );
+        $this->db->where('id', $id);
+        $this->db->update('content', $data);
+    }
+
+    function update($id){
     	$judul = $this->input->post('judul');
-    	$path_gambar_lama = $this->input->post('path_gambar_lama');
-    	if($path_gambar_lama!= '' || $path_gambar_lama!= NULL){
-    		unlink(base_url().'content/'.$path_gambar_lama);
-    	}
-    	$path_gambar = $gambar['filename'];
-    	$tgl_upload = date('Y-m-d H:i:s');
+    	$last_update = date('Y-m-d H:i:s');
     	$status = $this->input->post('status');
-    	$data = array(
+    	if($status == 1){
+            $this->db->set('status', '0');
+            $this->db->where('status', '1');
+            $this->db->update('content');
+        }
+        $data = array(
     		'judul' => $judul,
-    		'path_gambar' => $path_gambar,
     		'last_update' => $tgl_upload,
     		'status' => $status 
     	);
     	$this->db->set($data);
     	$this->db->where('id', $id);
     	$this->db->update('content');
+    }
+
+    function delete($id){
+        $gambar = $this->get_path_gambar($id);
+        if($gambar!='' || $gambar!= NULL){
+            $pecah_gambar = explode('.', $gambar);
+            $eliminasi = $pecah_gambar[0];
+            $u_tahun = substr($eliminasi,0,4);
+            $u_bulan = substr($eliminasi,5,2);
+            unlink('./content/'.$u_tahun.'/'.$u_bulan.'/'.$gambar);
+        }
+        $this->db->where('id', $id);
+        $this->db->delete('content');
+    }
+
+    function get_path_gambar($id){
+     $result = '';
+        $this->db->select('path_gambar');
+        $this->db->from('content');
+        $this->db->where('id', $id);
+        $this->db->limit(1);
+        $query = $this->db->get();
+        if($query->num_rows() > 0){
+            foreach ($query->result_array() as $key) {
+                $result = $key['path_gambar'];
+            }
+        }
+        return $result;   
     }
 }
