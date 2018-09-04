@@ -164,7 +164,22 @@ $route['Api.jsp/(:any)'] = 'api/statusbayar/$1';
 $route['Content.jsp'] = 'manajemen/content/index';
 $route['Content.jsp/add'] = 'manajemen/content/add';
 $route['Content.jsp/update'] = 'manajemen/content/update';
+$route['Content.jsp/change'] = 'manajemen/content/change';
 $route['Content.jsp/delete'] = 'manajemen/content/delete';
+
+/* routes for user */
+$route['SendActivation.jsp'] = 'manajemen/users/send_activation';
+$route['SendActivation.jsp/send/(:any)'] = 'manajemen/users/psend_activation/$1';
+$route['UnlockUser.jsp'] = 'manajemen/users/unlock';
+$route['UnlockUser.jsp/unlock/(:any)'] = 'manajemen/users/punlock/$1';
+
+/* routes for report investor */
+$route['InvestorReport.jsp/statistic'] = 'reporting/investor/statistic';
+$route['InvestorReport.jsp/portofolio'] = 'reporting/investor/portofolio';
+
+/* routes for transaction report */
+$route['TransactionReport.jsp/daily'] = 'transaction/reporting/daily';
+$route['TransactionReport.jsp/final'] = 'transaction/reporting/final_transaction';
 
 
 

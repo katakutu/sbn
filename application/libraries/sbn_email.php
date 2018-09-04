@@ -42,6 +42,73 @@ class Sbn_email {
 		} 
 	}
 
+  function email_send_activation($to_email, $name){
+    $this->email_setup();
+    $link = $this->generate_link($to_email);
+    $query = $this->datauser($to_email);
+    foreach ($query as $key) {
+      $sid = $key['SID'];
+      $user_id = $key['ID'];
+      $subreg = $key['SUBREG'];
+    }
+    $data = array(
+          'name'=> $name,
+          'email' => $to_email,
+          'ref_id' => $link,
+          'user_id' =>$user_id,
+          'subreg' =>$subreg,
+          'sid' =>$sid 
+        );
+
+        $this->CI->email->set_newline("\r\n");
+        $this->CI->email->from("sbnro@bri.co.id", 'SBN RETAIL ONLINE'); 
+        $this->CI->email->to($to_email);
+        $this->CI->email->subject('Resend Link Activation'); 
+        $body = $this->CI->load->view('emails/activation_register.php', $data, TRUE);
+        $this->CI->email->message($body);
+        //$this->CI->email->send();
+        if (!$this->CI->email->send()) {  
+          return false;
+    }else{  
+      $this->CI->load->library('audit_website');
+      $this->CI->audit_website->write(0, 900002, 'RESEND LINK ACTIVATION', $to_email, date("Y-m-d H:i:s"));
+      return true;   
+    } 
+  }
+
+  function datauser($id){
+    $this->CI->db->select('ID,SUBREG,SID');
+    $this->CI->db->from('user');
+    $this->CI->db->where('EMAIL', $id);
+    $query = $this->CI->db->get('');
+    return $query->result_array();
+  }
+
+
+  function generate_link($email)
+  {
+    $this->CI->load->model('Regis');
+    $now = new Datetime ('NOW');
+    $date = $now->format('HisdmY');
+
+    $code = $email . $date;
+    $code_encrypt = substr(hash('sha256', $code), 0, 45);
+
+    $data['REF_ID'] = $code_encrypt;
+    $data['REFDATE'] = $now->format('Y-m-d H:i:s');
+    $data['LASTUPDATE'] = $now->format('Y-m-d H:i:s');;
+    $data['ACTIVITY'] = 'RESEND LINK ACTIVATION';
+    $data['DATA'] = 'RESEND LINK ACTIVATION|' . $email;
+    $data['STATUS'] = '1';
+    $data['DESCRIPTION'] = 'ACTIVE';
+
+    $query_insert = $this->CI->Regis->insert_api($data);
+    if($query_insert)
+    {
+      return $code_encrypt;
+    }
+  }
+
 	function email_register_fail_dukcapil($to_email, $name){
 		$this->email_setup();
 

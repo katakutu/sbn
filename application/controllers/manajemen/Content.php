@@ -5,7 +5,6 @@ class Content extends CI_Controller {
 	var $sess;
 	var $sessLang;
 	var $CI;
-	var $functionid = 300;
 
 	/*
 	* method constructor untuk class content.
@@ -99,7 +98,7 @@ class Content extends CI_Controller {
         	$pecah_gambar = explode('.', $path_gambar_lama);
         	$eliminasi = $pecah_gambar[0];
         	$u_tahun = substr($eliminasi,0,4);
-        	$u_bulan = substr($eliminasi,5,2);
+        	$u_bulan = substr($eliminasi,4,2);
         	unlink($upPath.'/'.$u_tahun.'/'.$u_bulan.'/'.$path_gambar_lama);
         }
 

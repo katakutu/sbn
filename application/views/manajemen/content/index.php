@@ -70,13 +70,14 @@
 		                    	     $no = 1;
 		                    	     if(count($data) > 0){
 		                    	     	foreach($data as $value) {
+
 			                    	     	echo '<tr>
 			                    	     	       <td>'.$no.'.</td>
-			                    	     	       <td>'.$value['judul'].'.</td>
+			                    	     	       <td>'.$value['judul'].'</td>
 			                    	     	       <td style="text-align:center;">'.(($value['status'] == 1) ? $this->lang->line('publish') : $this->lang->line('no_publish')).'</td>
 			                    	     	       <td style="text-align: center;">'.(($value['tgl_upload'] != NULL || $value['tgl_upload'] != '0000-00-00') ? date('d/m/Y H:i:s', strtotime($value['tgl_upload'])) : '').'</td>
 			                    	     	       <td style="text-align: center;">'.(($value['last_update'] != NULL || $value['last_update'] != '0000-00-00') ? date('d/m/Y H:i:s', strtotime($value['last_update'])) : '').'</td>
-			                    	     	       <td><a href="#" data-toggle="modal" data-target="#changeContent'.$no.'"><i class="fa fa-image"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#updateContent'.$no.'"><i class="fa fa-edit"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#deleteContent'.$no.'"><i class="fa fa-trash"></i></a></td>
+			                    	     	       <td style="text-align:center;"><a href="#" data-toggle="modal" data-target="#changeContent'.$no.'"><i class="fa fa-image"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#updateContent'.$no.'"><i class="fa fa-edit"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#deleteContent'.$no.'"><i class="fa fa-trash"></i></a></td>
 			                    	     		  </tr>';
 			                    	     		  ?>
 			                    	     		    <!-- Modal -->
@@ -138,6 +139,49 @@
 													      </div>
 													      <div class="modal-footer">
 													      	<button type="submit" class="btn btn-warning"><?php echo $this->lang->line('yes');?></button> &nbsp;
+													        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('cancel');?></button>
+													      </div>
+													       </form>
+													    </div>
+
+													  </div>
+													</div>
+
+													<!-- Modal -->
+													<div id="changeContent<?=$no?>" class="modal fade" role="dialog">
+													  <div class="modal-dialog">
+
+													    <!-- Modal content-->
+													    <div class="modal-content">
+													      <form action="<?php echo base_url();?>Content.jsp/change" method="post" enctype="multipart/form-data">
+													      	<input type="hidden" name="id" value="<?php echo $value['id'];?>">
+													      <div class="modal-header">
+													        <button type="button" class="close" data-dismiss="modal">&times;</button>
+													        <h4 class="modal-title"><?php echo $this->lang->line('update_image_content');?></h4>
+													      </div>
+													      <div class="modal-body">
+													       <div class="form-group">
+													       		<div class="col-md-12">
+													       			<?php
+													       			      $pecah_file = explode('.', $value['path_gambar']);
+		                    	     									  $d_tahun = substr($pecah_file[0],0,4);
+		                    	     									  $d_bulan = substr($pecah_file[0],4,2);
+		                    	     									  $path_gambar = 'content/'.$d_tahun.'/'.$d_bulan.'/'.$value['path_gambar']; 
+													       			?>
+													       			<img src="<?php echo base_url().$path_gambar;?>" height="150" class="img-responsive">
+													       		</div>
+ 													       </div>
+													       <div class="form-group">
+															    <label for="file" class="col-md-3"><?php echo $this->lang->line('image_content');?></label>
+															    <div class="col-md-9">
+															    	<input type="file" name="path_gambar" class="form-control" required="required">	
+															    	<input type="hidden" name="path_gambar_lama" value="<?php echo $value['path_gambar'];?>">
+															    </div>
+															</div>
+													       
+													      </div>
+													      <div class="modal-footer">
+													      	<button type="submit" class="btn btn-warning"><?php echo $this->lang->line('save_button');?></button> &nbsp;
 													        <button type="button" class="btn btn-default" data-dismiss="modal"><?php echo $this->lang->line('cancel');?></button>
 													      </div>
 													       </form>

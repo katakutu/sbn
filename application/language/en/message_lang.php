@@ -943,6 +943,7 @@ $lang['faq'] = 'FAQ';
 
 $lang['title'] = 'Title';
 $lang['image_content'] = 'Image Content';
+$lang['update_image_content'] = 'Change Image Content';
 $lang['message_image_content'] = 'Image format : jpg, jpeg, png and gif<br>File maximum : 2 MB';
 $lang['status'] = 'Status';
 $lang['upload_date'] = 'Upload Date';
@@ -956,3 +957,8 @@ $lang['success_update_content'] = 'Update content is success';
 $lang['success_delete_content'] = 'Delete content is success';
 $lang['delete_content'] = 'Delete Content';
 $lang['confirm_delete_content'] = 'Are you sure want to delete this content?';
+$lang['send_link_activation'] = 'Send Link Activation';
+$lang['wrong_password'] = 'Wrong Password';
+$lang['open_unlock'] = 'Unlock';
+$lang['success_unlock'] = 'Unlock user is success';
+$lang['success_send_link_activation'] = 'Send Link Activation is success';

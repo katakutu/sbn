@@ -9,17 +9,11 @@ class ManagementContent_model extends CI_Model
 
     function get_front(){
         $result = '';
-        $this->db->select('path_gambar');
+        $this->db->select('path_gambar,judul');
         $this->db->from('content');
         $this->db->where('status', '1');
-        $this->db->limit(1);
         $query = $this->db->get();
-        if($query->num_rows() > 0){
-            foreach ($query->result_array() as $key) {
-                $result = $key['path_gambar'];
-            }
-        }
-        return $result;
+        return $query->result_array();
     }
 
     function get_all(){
@@ -34,11 +28,11 @@ class ManagementContent_model extends CI_Model
     	$path_gambar = $gambar['file_name'];
     	$tgl_upload = date('Y-m-d H:i:s');
     	$status = $this->input->post('status');
-    	if($status == 1){
-            $this->db->set('status', '0');
-            $this->db->where('status', '1');
-            $this->db->update('content');
-        }
+    	// if($status == 1){
+     //        $this->db->set('status', '0');
+     //        $this->db->where('status', '1');
+     //        $this->db->update('content');
+     //    }
         $data = array(
     		'judul' => $judul,
     		'path_gambar' => $path_gambar,
@@ -65,11 +59,11 @@ class ManagementContent_model extends CI_Model
     	$judul = $this->input->post('judul');
     	$last_update = date('Y-m-d H:i:s');
     	$status = $this->input->post('status');
-    	if($status == 1){
-            $this->db->set('status', '0');
-            $this->db->where('status', '1');
-            $this->db->update('content');
-        }
+    	// if($status == 1){
+     //        $this->db->set('status', '0');
+     //        $this->db->where('status', '1');
+     //        $this->db->update('content');
+     //    }
         $data = array(
     		'judul' => $judul,
     		'last_update' => $tgl_upload,
@@ -86,7 +80,7 @@ class ManagementContent_model extends CI_Model
             $pecah_gambar = explode('.', $gambar);
             $eliminasi = $pecah_gambar[0];
             $u_tahun = substr($eliminasi,0,4);
-            $u_bulan = substr($eliminasi,5,2);
+            $u_bulan = substr($eliminasi,4,2);
             unlink('./content/'.$u_tahun.'/'.$u_bulan.'/'.$gambar);
         }
         $this->db->where('id', $id);
