@@ -910,7 +910,7 @@ $lang['manajemen_user_unlock'] = 'Unlock';
 
 $lang['report'] = 'Laporan';
 $lang['investor report'] = 'Laporan Investor';
-$lang['customer statistic report'] = 'Laporan Data Statistik Nasabah';
+$lang['customer statistic report'] = 'Laporan Data Statik Nasabah';
 $lang['customer portofolio report'] = 'Laporan Portofolio Nasabah';
 $lang['transaction report'] = 'Laporan Transaksi';
 $lang['daily sales report'] = 'Laporan Data Penjualan Harian';
@@ -940,3 +940,6 @@ $lang['wrong_password'] = 'Salah Password';
 $lang['open_unlock'] = 'Buka Kunci';
 $lang['success_unlock'] = 'Buka kunci user berhasil';
 $lang['success_send_link_activation'] = 'Mengirim link aktivasi berhasil';
+$lang['registration_date'] = 'Tanggal Registrasi';
+$lang['order number'] = 'Nomor Order';
+$lang['transaction status'] = 'Status Transaksi';

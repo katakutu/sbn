@@ -181,5 +181,10 @@ $route['InvestorReport.jsp/portofolio'] = 'reporting/investor/portofolio';
 $route['TransactionReport.jsp/daily'] = 'transaction/reporting/daily';
 $route['TransactionReport.jsp/final'] = 'transaction/reporting/final_transaction';
 
+/* routes for transaction contact us */
+$route['FaqBackend.jsp'] = 'contactus/faq/index';
+$route['ContactUsBackend.jsp'] = 'contactus/contactus/index';
+$route['ContactUsBackend.jsp/send'] = 'contactus/contactus/sendmail';
+
 
 

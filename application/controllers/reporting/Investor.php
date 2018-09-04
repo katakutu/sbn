@@ -19,7 +19,7 @@ class Investor extends CI_Controller {
 
 	function statistic()
 	{
-		$data['data'] = $this->reportinginvestor_model->get_all();
+		$data['data'] = $this->reportinginvestor_model->get_statistic_all();
 		$this->load->view('reporting/investor/statistic', $data);
 		// var_dump($data['data']);
 		// exit;

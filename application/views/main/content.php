@@ -101,7 +101,7 @@
 	   </tr>
 	   <tr>
 	   	<td colspan="2" align="center">
-	   		<div id="myCarousel" class="carousel slide" data-ride="carousel"> 
+	   		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 350px !important;"> 
 
 			  <ol class="carousel-indicators">
 			  	<?php
@@ -131,11 +131,11 @@
 							 	$d_bulan = substr($pecah_file[0],4,2);
 								if($s2 == 0){
 				  	      		  echo '<div class="item active">
-				  	      		  			<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'">
+				  	      		  			<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'" style="height:350px !important;width:100%;">
 				    					</div>';	
 				  	      		} else {
 				  	      			echo '<div class="item">
-				      						<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'">
+				      						<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'" style="height:350px !important;width:100%;">
 				    					  </div>';
 				  	      		}
 							}

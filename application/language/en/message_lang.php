@@ -932,7 +932,7 @@ $lang['manajemen_user_unlock'] = 'Unlock';
 
 $lang['report'] = 'Report';
 $lang['investor report'] = 'Investor Report';
-$lang['customer statistic report'] = 'Customer Statistic Report';
+$lang['customer statistic report'] = 'Customer Static Report';
 $lang['customer portofolio report'] = 'Customer Portofolio Report';
 $lang['transaction report'] = 'Transaction Report';
 $lang['daily sales report'] = 'Daily Sales Report';
@@ -962,3 +962,6 @@ $lang['wrong_password'] = 'Wrong Password';
 $lang['open_unlock'] = 'Unlock';
 $lang['success_unlock'] = 'Unlock user is success';
 $lang['success_send_link_activation'] = 'Send Link Activation is success';
+$lang['registration_date'] = 'Registration Date';
+$lang['order number'] = 'Order Number';
+$lang['transaction status'] = 'Transaction Status';
