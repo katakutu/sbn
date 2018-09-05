@@ -27,6 +27,8 @@ class Base extends CI_Controller {
 		foreach ($user ->result() as $row) {
 			$data['name'] = ucwords(strtolower($row->NAME));
 			$data['name_detail'] = '<b>Email 		:</b> xxx'.substr($row->EMAIL, strlen($row->EMAIL) - 15, strlen($row->EMAIL)).'<br />';
+			$data['name_detail'] .= '<b>SID Investor :</b> '.$row->SID.'<br />';
+			$data['name_detail'] .= '<b>Sub Registri  :</b> '.$row->SUBREG.'<br />';
 			$data['name_detail'] .= '<b>Last login :</b> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGIN)).'<br />';
 			$data['name_detail'] .= '<b>Last logout :</b> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGOUT)).'<br />';
 			

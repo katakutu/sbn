@@ -25,7 +25,10 @@ class Reporting extends CI_Controller {
 
 	function final_transaction()
 	{
-		
+		$data['data'] = $this->reportingtransaction_model->get_final_transaction_all();
+		$this->load->view('transaction/reporting/final', $data);
+		// var_dump($data['data']);
+		// exit();
 	}
 }
 

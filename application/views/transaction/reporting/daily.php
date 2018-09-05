@@ -66,22 +66,41 @@
  <bdi></bdi>	
 	</body>
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="<?=base_url();?>css/responsive.bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.js">
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Responsive-2.2.1/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Buttons-1.5.1/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Responsive-2.2.1/css/responsive.bootstrap.min.css">
     <script src="<?=base_url();?>plugin/DataTables-1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="<?=base_url();?>plugin/DataTables-1.10.16/js/dataTables.bootstrap.min.js"></script>
-    <script src="<?=base_url();?>js/dataTables.responsive.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    <script src="<?=base_url();?>js/responsive.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>plugin/Responsive-2.2.1/js/dataTables.responsive.min.js"></script>
+    <script src="<?=base_url();?>plugin/Responsive-2.2.1/js/responsive.bootstrap.min.js"></script>
+    <script src="<?=base_url();?>plugin/Buttons-1.5.1/js/dataTables.buttons.min.js"></script>
+    <script src="<?=base_url();?>plugin/Buttons-1.5.1/js/buttons.flash.min.js"></script>
+    <script src="<?=base_url();?>plugin/JSZip-2.5.0/jszip.min.js"></script>
+    <script src="<?=base_url();?>plugin/pdfmake-0.1.32/pdfmake.min.js"></script>
+    <script src="<?=base_url();?>plugin/pdfmake-0.1.32/vfs_fonts.js"></script>
+    <script src="<?=base_url();?>plugin/Buttons-1.5.1/js/buttons.html5.min.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
     	$(function () {
     		$('#daily_reporting').DataTable({
-    			dom: 'Bfrtip',
-    			buttons: ['copy','csv', 'excel']
+    			responsive: true,
+    			dom: 'lBfrtip',
+    			buttons: [
+    			     {
+		                  text    : '<i class="fa fa-download"></i> XLS',
+		                  extend  : 'excel'
+		              },
+		              {
+		                  text    : '<i class="fa fa-download"></i> PDF',
+		                  extend  : 'pdfHtml5',
+		                  orientation: 'landscape',
+		                  pageSize: 'LEGAL',
+		              },
+		              {
+		                  text    : '<i class="fa fa-download"></i> CSV',
+		                  extend  : 'csv'
+		              }
+    			]
     		});
     	});
     </script>

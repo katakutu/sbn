@@ -17,10 +17,10 @@ class ReportingInvestor_model extends CI_Model
     }
 
     function get_portofolio_all(){
-        $this->db->select('a.fullname,a.gender,a.email,a.idcard_no,b.NPWP,b.SID,b.SUBREG,a.address,a.phone_no,a.mobilephone_no,c.NOMOR_REKENING,a.creation_date');
-        $this->db->from('investor a');
+        $this->db->select('a.uid,b.NAME,b.SID,b.SUBREG, COUNT(a.order_id) as JUMLAH_PORTOFOLIO');
+        $this->db->from('orders a');
         $this->db->join('user b', 'b.ID=a.uid', 'left');
-        $this->db->join('sid c', 'c.USERID=b.ID', 'left');
+        $this->db->group_by('a.uid');
         $query = $this->db->get();
         return $query->result_array();
     }

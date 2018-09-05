@@ -17,19 +17,31 @@
 		<link rel="stylesheet" href="<?=base_url();?>plugin/tabmenu/style.css">
 		<script type="text/javascript" src="<?=base_url();?>js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="<?=base_url();?>plugin/bootstrap/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.accordion .card-header:after {
+	    		font-family: 'FontAwesome';  
+	    		content: "\f068";
+	    		float: right; 
+			}
+			.accordion .card-header.collapsed:after {
+	    		/* symbol for "collapsed" panels */
+	    		content: "\f067"; 
+			}
+		</style>
 	</head>
 	<body oncontextmenu="return false">
 		<div class="panel panel-primary">
 			<h3 style="text-align: right; padding-right: 25px">
 				<i class="fa fa-feed"></i> <b>FAQ</b>
 			</h3>	
-			<div class="panel-body" id="invesdetail">
+			<div class="panel-body">
 				<ol class="breadcrumb">
 					<li><?= $this->lang->line('contact_us') ?></a></li>
 					<li class="active">FAQ</li>
 				</ol>
 				<br>
-				<div class="panel-body">
+				<div class="panel-body" style="height: 240px !important;">
+
 					<div class="panel-group" id="faqAccordion">
 				        <div class="panel panel-default ">
 				            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
@@ -64,12 +76,11 @@
 				        </div>
 				        
 				    </div>
-				    <!--/panel-group-->
+				    <!--/panel-group -->
+
 				</div>
             </div>
 		</div>
 	</body>
-	<link rel="stylesheet" type="text/css" href="<?=base_url();?>css/responsive.bootstrap.min.css">
-    <script src="<?=base_url();?>js/responsive.bootstrap.min.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
 </html>

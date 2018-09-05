@@ -15,6 +15,7 @@ class Investor extends CI_Controller {
 		$this->sess = $this->session->userdata('session');
 		$this->sessLang = $this->session->userdata('session_lang');
 		$this->load->model(array('reportinginvestor_model'));
+		$this->load->library(array('sbn_tambahan'));
 	}
 
 	function statistic()
@@ -27,7 +28,10 @@ class Investor extends CI_Controller {
 
 	function portofolio()
 	{
-		
+		$data['data'] = $this->reportinginvestor_model->get_portofolio_all();
+		$this->load->view('reporting/investor/portofolio', $data);
+		// var_dump($data['data']);
+		// exit;
 	}
 }
 

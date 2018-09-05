@@ -26,9 +26,10 @@
 </style>
 <body oncontextmenu="return false">
 	<?= $this->parameter_helper->login_header ?>
+	<?php $sesi = $this->session->userdata('session'); ?>
 	<table  style="font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; background-color: #fff; border: 1px; box-shadow: 1px 1px 10px #888888; width: 100%; padding: 20px">
 		
-		<tr>
+		<!-- <tr>
 		<td id="td_img_person" style="width: 200px">
 			<img id="img_person" src="<?= base_url() ?>images/user/<?= $img ?>.png" alt="person" class="img-responsive">
 		</td>
@@ -98,10 +99,11 @@
 			    </tbody>
 		    </table>
 		</td>
-	   </tr>
+	   </tr> -->
+
 	   <tr>
 	   	<td colspan="2" align="center">
-	   		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 350px !important;"> 
+	   		<div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 328px !important;"> 
 
 			  <ol class="carousel-indicators">
 			  	<?php
@@ -131,11 +133,11 @@
 							 	$d_bulan = substr($pecah_file[0],4,2);
 								if($s2 == 0){
 				  	      		  echo '<div class="item active">
-				  	      		  			<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'" style="height:350px !important;width:100%;">
+				  	      		  			<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'" style="height:328px !important;width:100%;">
 				    					</div>';	
 				  	      		} else {
 				  	      			echo '<div class="item">
-				      						<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'" style="height:350px !important;width:100%;">
+				      						<img src="'.base_url().'content/'.$d_tahun.'/'.$d_bulan.'/'.$key2['path_gambar'].'" alt="'.$key2['judul'].'" style="height:328px !important;width:100%;">
 				    					  </div>';
 				  	      		}
 							}
