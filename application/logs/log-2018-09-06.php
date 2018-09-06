@@ -368,3 +368,66 @@ ERROR - 2018-09-06 16:25:22 --> Could not find the language line "dt_processsing
 ERROR - 2018-09-06 16:26:43 --> Could not find the language line "dt_page"
 ERROR - 2018-09-06 16:26:43 --> Could not find the language line "dt_page"
 ERROR - 2018-09-06 16:26:43 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-06 19:16:46 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:16:46 --> Unable to connect to the database
+ERROR - 2018-09-06 19:16:46 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:16:46 --> Severity: Error --> session_start(): Failed to initialize storage module: user (path: C:\xampp\tmp) C:\xampp\htdocs\sbn\system\libraries\Session\Session.php 140
+ERROR - 2018-09-06 19:17:31 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:17:31 --> Unable to connect to the database
+ERROR - 2018-09-06 19:17:31 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:17:31 --> Severity: Error --> session_start(): Failed to initialize storage module: user (path: C:\xampp\tmp) C:\xampp\htdocs\sbn\system\libraries\Session\Session.php 140
+ERROR - 2018-09-06 19:17:34 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:17:34 --> Unable to connect to the database
+ERROR - 2018-09-06 19:17:34 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:17:34 --> Severity: Error --> session_start(): Failed to initialize storage module: user (path: C:\xampp\tmp) C:\xampp\htdocs\sbn\system\libraries\Session\Session.php 140
+ERROR - 2018-09-06 19:17:43 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:17:43 --> Unable to connect to the database
+ERROR - 2018-09-06 19:17:43 --> Severity: Warning --> mysqli::real_connect(): (HY000/2002): A socket operation was attempted to an unreachable host.
+ C:\xampp\htdocs\sbn\system\database\drivers\mysqli\mysqli_driver.php 161
+ERROR - 2018-09-06 19:17:43 --> Severity: Error --> session_start(): Failed to initialize storage module: user (path: C:\xampp\tmp) C:\xampp\htdocs\sbn\system\libraries\Session\Session.php 140
+ERROR - 2018-09-06 19:19:33 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:19:33 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:19:33 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:19:34 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:19:34 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:19:43 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:20:02 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 19:20:02 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 19:20:02 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-06 19:44:40 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:44:40 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:44:40 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:44:46 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 19:44:55 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 19:44:55 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 19:44:55 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-06 20:03:24 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:03:24 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:03:24 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:03:25 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:03:25 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:03:27 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:03:35 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:03:35 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:03:35 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-06 20:27:19 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:27:20 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:27:20 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:27:20 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:27:22 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-06 20:27:30 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:27:30 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:27:30 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-06 20:30:25 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:30:25 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:30:25 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-06 20:30:35 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:30:35 --> Could not find the language line "dt_page"
+ERROR - 2018-09-06 20:30:35 --> Could not find the language line "dt_processsing"

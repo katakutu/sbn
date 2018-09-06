@@ -43,7 +43,7 @@ class Reporting extends CI_Controller {
 		$output = fopen('php://output', 'w');
 
 		// output the column headings
-		fputcsv($output, array('NAMA', 'TANGGAL TRANSAKSI', 'NOMOR ORDER', 'STATUS TRANSAKSI'));
+		// fputcsv($output, array('NAMA', 'TANGGAL TRANSAKSI', 'NOMOR ORDER', 'STATUS TRANSAKSI'));
 		if($id!=''){
 		  
 		    $data = $this->reportingtransaction_model->get_daily($id);
@@ -204,18 +204,18 @@ class Reporting extends CI_Controller {
 		                    	 <td>'.$value['created_by'].'</td>
 		                    	 <td>'.$value['sid'].'</td>
 		                    	 <td>'.$value['NAME'].'</td>
-		                    	 <td>'.$value['amount'].'</td>
-		                    	 <td>'.$value['NOMOR_REKENING'].'</td>
-		                    	 <td>'.$value['NOMOR_KTP'].'</td>
+		                    	 <td>'.number_format($value['amount'],0,'.',',').'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_REKENING'].'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_KTP'].'</td>
 		                    	 <td>'.$value['TEMPAT_LAHIR'].'</td>
 		                    	 <td>'.date('d-m-Y', strtotime($value['TANGGAL_LAHIR'])).'</td>
 		                    	 <td>'.(($value['GENDER'] == 1) ? 'Laki-laki' : 'Perempuan').'</td>
 		                    	 <td>'.$value['PEKERJAAN'].'</td>
 		                    	 <td>'.$value['ALAMAT'].'</td>
-		                    	 <td>'.$value['KODE_KOTA'].'</td>
-		                    	 <td>'.$value['KODE_PROVINSI'].'</td>
-		                    	 <td>'.$value['NOMOR_TELEPON'].'</td>
-		                    	 <td>'.$value['NOMOR_HANDPHONE'].'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['KODE_KOTA'].'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['KODE_PROVINSI'].'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_TELEPON'].'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_HANDPHONE'].'</td>
 		                    	 <td>'.$value['EMAIL'].'</td>
 		                    	 <td>'.date('d-m-Y H:i:s', strtotime($value['creation_date'])).'</td>
 		                    	 <td>'.$value['sec_account_no'].'</td>

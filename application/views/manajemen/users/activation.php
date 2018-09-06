@@ -122,7 +122,21 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
     	$(function () {
-    		$('#manajemen_activation').DataTable();
+    		$('#manajemen_activation').DataTable({
+    			language: {
+			       lengthMenu: "<?= $this->lang->line('dt_show') ?> _MENU_ <?= $this->lang->line('dt_record') ?> <?= $this->lang->line('dt_per_page') ?>",
+			       zeroRecords: "<?= $this->lang->line('dt_empty') ?>",
+			       info: "<?= $this->lang->line('dt_show') ?> <?= $this->lang->line('dt_page') ?> _PAGE_ <?= $this->lang->line('dt_of') ?> _PAGES_ <?= $this->lang->line('dt_page') ?>",
+			       infoEmpty: "<?= $this->lang->line('dt_empty') ?>",
+			       infoFiltered: "<?= $this->lang->line('dt_filtered') ?> <?= $this->lang->line('dt_of') ?> _MAX_ <?= $this->lang->line('dt_record') ?>)",
+			       search: "<?= $this->lang->line('dt_search') ?>",
+			       processing: "<?= $this->lang->line('dt_processsing') ?>",
+			       paginate:{
+			       	  previous: "<?= $this->lang->line('dt_previous') ?>",
+			       	  next: "<?= $this->lang->line('dt_next') ?>"
+			       }
+			   }
+    		});
     		var message = '<?=$this->session->flashdata("message")?>';
     		var error = '<?=$this->session->flashdata("error")?>';
     		if(message!=''){

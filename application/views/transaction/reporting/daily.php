@@ -123,7 +123,11 @@
 			       infoEmpty: "<?= $this->lang->line('dt_empty') ?>",
 			       infoFiltered: "<?= $this->lang->line('dt_filtered') ?> <?= $this->lang->line('dt_of') ?> _MAX_ <?= $this->lang->line('dt_record') ?>)",
 			       search: "<?= $this->lang->line('dt_search') ?>",
-			       processing: "<?= $this->lang->line('dt_processsing') ?>"
+			       processing: "<?= $this->lang->line('dt_processsing') ?>",
+			       paginate:{
+			       	  previous: "<?= $this->lang->line('dt_previous') ?>",
+			       	  next: "<?= $this->lang->line('dt_next') ?>"
+			       }
 			   }
     		});
     	});
