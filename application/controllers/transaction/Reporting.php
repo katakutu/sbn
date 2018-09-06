@@ -19,13 +19,31 @@ class Reporting extends CI_Controller {
 
 	function daily()
 	{
-		$data['data'] = $this->reportingtransaction_model->get_daily();
+		if(isset($_POST['cari'])){
+		  if(isset($_POST['tgl']) && $_POST['tgl']!=''){
+		    $data['data'] = $this->reportingtransaction_model->get_daily($_POST['tgl']);	
+		  } else {
+		    $data['data'] = array();	
+		  }
+		  	
+		} else {
+		  $data['data'] = array();
+		}
+		
 		$this->load->view('transaction/reporting/daily', $data);
 	}
 
 	function final_transaction()
 	{
-		$data['data'] = $this->reportingtransaction_model->get_final_transaction_all();
+		if(isset($_POST['cari'])){
+		  if(isset($_POST['tgl']) && $_POST['tgl']!=''){
+			$data['data'] = $this->reportingtransaction_model->get_final_transaction_all($_POST['tgl']);
+		  } else {
+		  	$data['data'] = array();
+		  }
+		} else {
+			$data['data'] = array();
+		}
 		$this->load->view('transaction/reporting/final', $data);
 		// var_dump($data['data']);
 		// exit();

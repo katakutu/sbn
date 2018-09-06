@@ -34,6 +34,20 @@
 				
 				<br>
 				<div class="panel-body">
+					<div style="width: 100%;">
+						<form method="post" action="<?php echo base_url();?>TransactionReport.jsp/final">
+						
+									<div style="width: 10%;float:left;margin-top: 10px;">Tanggal</div>
+									<div style="width: 20%;float:left;">
+										<input type="text" name="tgl" class="form-control datepicker">
+									</div>
+									<div style="width: 20%;float:left;">
+										&nbsp;&nbsp; <button type="reset" class="btn btn-default">Reset</button> &nbsp;
+										<input type="submit" name="cari" value="Search" class="btn btn-success">
+									</div>
+									<div style="width: 50%;float:left;"></div>
+						</form>
+					</div>
 					<div class="table table-responsive">
 		            	<table class="table table-striped table-bordered table-hover" id="final_reporting" cellspacing="0" width="100%">
 		                    <thead>
@@ -114,6 +128,7 @@
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Responsive-2.2.1/css/responsive.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Buttons-1.5.1/css/buttons.dataTables.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Responsive-2.2.1/css/responsive.bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="<?=base_url();?>css/bootstrap-datepicker.min.css">
     <script src="<?=base_url();?>plugin/DataTables-1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="<?=base_url();?>plugin/DataTables-1.10.16/js/dataTables.bootstrap.min.js"></script>
     <script src="<?=base_url();?>plugin/Responsive-2.2.1/js/dataTables.responsive.min.js"></script>
@@ -124,9 +139,14 @@
     <script src="<?=base_url();?>plugin/pdfmake-0.1.32/pdfmake.min.js"></script>
     <script src="<?=base_url();?>plugin/pdfmake-0.1.32/vfs_fonts.js"></script>
     <script src="<?=base_url();?>plugin/Buttons-1.5.1/js/buttons.html5.min.js"></script>
+    <script src="<?=base_url();?>js/bootstrap-datepicker.min.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
     	$(function () {
+    		$('.datepicker').datepicker({
+    			format: 'yyyy-mm-dd',
+    			autoclose: true
+    		});
     		$('#final_reporting').DataTable({
     			responsive: true,
     			dom: 'lBfrtip',
