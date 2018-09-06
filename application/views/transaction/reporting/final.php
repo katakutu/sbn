@@ -35,17 +35,30 @@
 				<br>
 				<div class="panel-body">
 					<div style="width: 100%;">
+						<?php 
+	                            $kunci = isset($_POST['tgl']) && $_POST['tgl'] !='' ? '/'.$_POST['tgl'] : '/';
+	                    ?>
 						<form method="post" action="<?php echo base_url();?>TransactionReport.jsp/final">
-						
-									<div style="width: 10%;float:left;margin-top: 10px;">Tanggal</div>
+									<div style="width: 10%;float:left;margin-top: 10px;"><?=$this->lang->line('d')?></div>
 									<div style="width: 20%;float:left;">
-										<input type="text" name="tgl" class="form-control datepicker">
+										<input type="text" name="tgl" class="form-control datepicker" value="<?php echo isset($_POST['tgl']) && $_POST['tgl']!='' ? $_POST['tgl'] : ''?>">
 									</div>
 									<div style="width: 20%;float:left;">
-										&nbsp;&nbsp; <button type="reset" class="btn btn-default">Reset</button> &nbsp;
-										<input type="submit" name="cari" value="Search" class="btn btn-success">
+										&nbsp;&nbsp; <a href="<?php echo base_url();?>TransactionReport.jsp/final" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</a> &nbsp;
+										<input type="submit" name="cari" value="<?=$this->lang->line('search')?>" class="btn btn-success">
 									</div>
-									<div style="width: 50%;float:left;"></div>
+									<div style="width: 50%;float:left;">
+										<div class="btn-group" style="float: right;">
+                                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            Export <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="<?php echo base_url();?>TransactionReport.jsp/final_transaction_export_csv<?=$kunci?>" target="_blank" class="dropdown-item"><i class="fa fa-file-code-o"></i> CSV</a></li>
+                                            <li><a href="<?php echo base_url();?>TransactionReport.jsp/final_transaction_export_xls<?=$kunci?>" target="_blank" class="dropdown-item"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+                                            <li><a href="<?php echo base_url();?>TransactionReport.jsp/final_transaction_export_txt<?=$kunci?>" target="_blank" class="dropdown-item"><i class="fa fa fa-file-text-o"></i> Txt</a></li>
+                                          </ul>
+                                        </div>
+									</div>
 						</form>
 					</div>
 					<div class="table table-responsive">
@@ -68,7 +81,6 @@
 		                        	<th style="text-align: center;"><?= $this->lang->line('date of birth') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('gender') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('working') ?></th>
-		                        	<th style="text-align: center;"><?= $this->lang->line('working') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('address') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('city_code') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('province_code') ?></th>
@@ -87,32 +99,32 @@
 		                    	     	foreach ($data as $value) {
 		                    	     		echo '<tr>
 		                    	     				<td>'.$value['order_id'].'</td>
-		                    	     				<td>'.$value['billing_code'].'</td>
+		                    	     				<td style"text-align:center;">'.$value['billing_code'].'</td>
 		                    	     				<td>'.$value['ntpn'].'</td>
 		                    	     				<td>'.$value['ntb'].'</td>
 		                    	     				<td>'.$value['status'].'</td>
-		                    	     				<td>'.$value['seri_name'].'</td>
+		                    	     				<td style"text-align:center;">'.$value['seri_name'].'</td>
 		                    	     				<td>'.$value['created_by'].'</td>
 		                    	     				<td>'.$value['sid'].'</td>
 		                    	     				<td>'.$value['NAME'].'</td>
-		                    	     				<td>'.$value['amount'].'</td>
+		                    	     				<td style"text-align:right;">'.number_format($value['amount'],0,'.',',').'</td>
 		                    	     				<td>'.$value['NOMOR_REKENING'].'</td>
 		                    	     				<td>'.$value['NOMOR_KTP'].'</td>
 		                    	     				<td>'.$value['TEMPAT_LAHIR'].'</td>
-		                    	     				<td>'.date('d-m-Y', strtotime($value['TANGGAL_LAHIR'])).'</td>
-		                    	     				<td>'.$value['GENDER'].'</td>
+		                    	     				<td style"text-align:center;">'.date('d-m-Y', strtotime($value['TANGGAL_LAHIR'])).'</td>
+		                    	     				<td>'.(($value['GENDER'] == 1) ? 'Laki-laki' : 'Perempuan').'</td>
 		                    	     				<td>'.$value['PEKERJAAN'].'</td>
 		                    	     				<td>'.$value['ALAMAT'].'</td>
-		                    	     				<td>'.$value['KODE_KOTA'].'</td>
-		                    	     				<td>'.$value['KODE_PROVINSI'].'</td>
+		                    	     				<td style"text-align:center;">'.$value['KODE_KOTA'].'</td>
+		                    	     				<td style"text-align:center;">'.$value['KODE_PROVINSI'].'</td>
 		                    	     				<td>'.$value['NOMOR_TELEPON'].'</td>
 		                    	     				<td>'.$value['NOMOR_HANDPHONE'].'</td>
 		                    	     				<td>'.$value['EMAIL'].'</td>
-		                    	     				<td>'.date('d-m-Y H:i:s', strtotime($value['creation_date'])).'</td>
+		                    	     				<td style"text-align:center;">'.date('d-m-Y H:i:s', strtotime($value['creation_date'])).'</td>
 		                    	     				<td>'.$value['sec_account_no'].'</td>
-		                    	     				<td>'.$value['KODE_BANK'].'</td>
+		                    	     				<td style"text-align:center;">'.$value['KODE_BANK'].'</td>
 		                    	     				<td>'.$value['subreg_name'].'</td>
-		                    	     			  </tr>';
+		                    	     			</tr>';
 		                    	     	}
 		                    	     }
 		                    	?>
@@ -122,7 +134,6 @@
 				</div>
             </div>
 		</div>
- <bdi></bdi>	
 	</body>
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Responsive-2.2.1/css/responsive.bootstrap.min.css">
@@ -149,23 +160,15 @@
     		});
     		$('#final_reporting').DataTable({
     			responsive: true,
-    			dom: 'lBfrtip',
-    			buttons: [
-    			     {
-		                  text    : '<i class="fa fa-download"></i> XLS',
-		                  extend  : 'excel'
-		              },
-		              {
-		                  text    : '<i class="fa fa-download"></i> PDF',
-		                  extend  : 'pdfHtml5',
-		                  orientation: 'landscape',
-		                  pageSize: 'LEGAL',
-		              },
-		              {
-		                  text    : '<i class="fa fa-download"></i> CSV',
-		                  extend  : 'csv'
-		              }
-    			]
+    			language: {
+			       lengthMenu: "<?= $this->lang->line('dt_show') ?> _MENU_ <?= $this->lang->line('dt_record') ?> <?= $this->lang->line('dt_per_page') ?>",
+			       zeroRecords: "<?= $this->lang->line('dt_empty') ?>",
+			       info: "<?= $this->lang->line('dt_show') ?> <?= $this->lang->line('dt_page') ?> _PAGE_ <?= $this->lang->line('dt_of') ?> _PAGES_ <?= $this->lang->line('dt_page') ?>",
+			       infoEmpty: "<?= $this->lang->line('dt_empty') ?>",
+			       infoFiltered: "<?= $this->lang->line('dt_filtered') ?> <?= $this->lang->line('dt_of') ?> _MAX_ <?= $this->lang->line('dt_record') ?>)",
+			       search: "<?= $this->lang->line('dt_search') ?>",
+			       processing: "<?= $this->lang->line('dt_processsing') ?>"
+			   }
     		});
     	});
     </script>

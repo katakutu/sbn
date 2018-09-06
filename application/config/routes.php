@@ -175,11 +175,23 @@ $route['UnlockUser.jsp/unlock/(:any)'] = 'manajemen/users/punlock/$1';
 
 /* routes for report investor */
 $route['InvestorReport.jsp/statistic'] = 'reporting/investor/statistic';
+$route['InvestorReport.jsp/statistic_export_csv'] = 'reporting/investor/statistic_export_csv';
+$route['InvestorReport.jsp/statistic_export_xls'] = 'reporting/investor/statistic_export_xls';
+$route['InvestorReport.jsp/statistic_export_txt'] = 'reporting/investor/statistic_export_txt';
+
 $route['InvestorReport.jsp/portofolio'] = 'reporting/investor/portofolio';
+$route['InvestorReport.jsp/portofolio_export_xls'] = 'reporting/investor/portofolio_export_xls';
 
 /* routes for transaction report */
 $route['TransactionReport.jsp/daily'] = 'transaction/reporting/daily';
+$route['TransactionReport.jsp/daily_export_csv/(:any)'] = 'transaction/reporting/daily_export_csv/$1';
+$route['TransactionReport.jsp/daily_export_xls/(:any)'] = 'transaction/reporting/daily_export_xls/$1';
+$route['TransactionReport.jsp/daily_export_txt/(:any)'] = 'transaction/reporting/daily_export_txt/$1';
+
 $route['TransactionReport.jsp/final'] = 'transaction/reporting/final_transaction';
+$route['TransactionReport.jsp/final_transaction_export_csv/(:any)'] = 'transaction/reporting/final_transaction_export_csv/$1';
+$route['TransactionReport.jsp/final_transaction_export_xls/(:any)'] = 'transaction/reporting/final_transaction_export_xls/$1';
+$route['TransactionReport.jsp/final_transaction_export_txt/(:any)'] = 'transaction/reporting/final_transaction_export_txt/$1';
 
 /* routes for transaction contact us */
 $route['FaqBackend.jsp'] = 'contactus/faq/index';

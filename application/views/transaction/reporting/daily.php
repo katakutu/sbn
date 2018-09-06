@@ -35,25 +35,39 @@
 				<br>
 				<div class="panel-body">
 					<div style="width: 100%;">
+						<?php 
+	                            $kunci = isset($_POST['tgl']) && $_POST['tgl'] !='' ? '/'.$_POST['tgl'] : '/';
+	                    ?>
 						<form method="post" action="<?php echo base_url();?>TransactionReport.jsp/daily">
-						
-									<div style="width: 10%;float:left;margin-top: 10px;">Tanggal</div>
+									<div style="width: 10%;float:left;margin-top: 10px;"><?=$this->lang->line('d')?></div>
 									<div style="width: 20%;float:left;">
-										<input type="text" name="tgl" class="form-control datepicker">
+										<input type="text" name="tgl" class="form-control datepicker" value="<?php echo isset($_POST['tgl']) && $_POST['tgl']!='' ? $_POST['tgl'] : ''?>">
 									</div>
 									<div style="width: 20%;float:left;">
-										&nbsp;&nbsp; <button type="reset" class="btn btn-default">Reset</button> &nbsp;
-										<input type="submit" name="cari" value="Search" class="btn btn-success">
+										&nbsp;&nbsp; <a href="<?php echo base_url();?>TransactionReport.jsp/daily" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</a> &nbsp;
+										<input type="submit" name="cari" value="<?=$this->lang->line('search')?>" class="btn btn-success">
 									</div>
-									<div style="width: 50%;float:left;"></div>
+									<div style="width: 50%;float:left;">
+										<div class="btn-group" style="float: right;">
+                                          <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                            Export <span class="caret"></span>
+                                          </button>
+                                          <ul class="dropdown-menu" role="menu">
+                                            <li><a href="<?php echo base_url();?>TransactionReport.jsp/daily_export_csv<?=$kunci?>" target="_blank" class="dropdown-item"><i class="fa fa-file-code-o"></i> CSV</a></li>
+                                            <li><a href="<?php echo base_url();?>TransactionReport.jsp/daily_export_xls<?=$kunci?>" target="_blank" class="dropdown-item"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+                                            <li><a href="<?php echo base_url();?>TransactionReport.jsp/daily_export_txt<?=$kunci?>" target="_blank" class="dropdown-item"><i class="fa fa fa-file-text-o"></i> Txt</a></li>
+                                          </ul>
+                                        </div>
+									</div>
 						</form>
 					</div>
+					
 					<div class="table table-responsive">
 		            	<table class="table table-striped table-bordered table-hover" id="daily_reporting" cellspacing="0" width="100%">
 		                    <thead>
 		                        <tr>
 		                        	<th style="text-align: center;"><?= $this->lang->line('name') ?></th>
-		                        	<th style="text-align: center;"><?= $this->lang->line('transaction date') ?></th>
+		                        	<th style="text-align: center;"><?= ucwords($this->lang->line('transaction date')) ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('order number') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('transaction status') ?></th>
 					    		</tr>
@@ -77,7 +91,6 @@
 				</div>
             </div>
 		</div>
- <bdi></bdi>	
 	</body>
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/Responsive-2.2.1/css/responsive.bootstrap.min.css">
@@ -103,24 +116,15 @@
     			autoclose: true
     		});
     		$('#daily_reporting').DataTable({
-    			responsive: true,
-    			dom: 'lBfrtip',
-    			buttons: [
-    			     {
-		                  text    : '<i class="fa fa-download"></i> XLS',
-		                  extend  : 'excel'
-		              },
-		              {
-		                  text    : '<i class="fa fa-download"></i> PDF',
-		                  extend  : 'pdfHtml5',
-		                  orientation: 'landscape',
-		                  pageSize: 'LEGAL',
-		              },
-		              {
-		                  text    : '<i class="fa fa-download"></i> CSV',
-		                  extend  : 'csv'
-		              }
-    			]
+    			language: {
+			       lengthMenu: "<?= $this->lang->line('dt_show') ?> _MENU_ <?= $this->lang->line('dt_record') ?> <?= $this->lang->line('dt_per_page') ?>",
+			       zeroRecords: "<?= $this->lang->line('dt_empty') ?>",
+			       info: "<?= $this->lang->line('dt_show') ?> <?= $this->lang->line('dt_page') ?> _PAGE_ <?= $this->lang->line('dt_of') ?> _PAGES_ <?= $this->lang->line('dt_page') ?>",
+			       infoEmpty: "<?= $this->lang->line('dt_empty') ?>",
+			       infoFiltered: "<?= $this->lang->line('dt_filtered') ?> <?= $this->lang->line('dt_of') ?> _MAX_ <?= $this->lang->line('dt_record') ?>)",
+			       search: "<?= $this->lang->line('dt_search') ?>",
+			       processing: "<?= $this->lang->line('dt_processsing') ?>"
+			   }
     		});
     	});
     </script>

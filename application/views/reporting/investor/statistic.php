@@ -34,6 +34,18 @@
 				
 				<br>
 				<div class="panel-body">
+					<div>
+						<div class="btn-group">
+                             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                              Export <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="<?php echo base_url();?>InvestorReport.jsp/statistic_export_csv" target="_blank" class="dropdown-item"><i class="fa fa-file-code-o"></i> CSV</a></li>
+                                <li><a href="<?php echo base_url();?>InvestorReport.jsp/statistic_export_xls" target="_blank" class="dropdown-item"><i class="fa fa-file-excel-o"></i> Excel</a></li>
+                                <li><a href="<?php echo base_url();?>InvestorReport.jsp/statistic_export_txt" target="_blank" class="dropdown-item"><i class="fa fa fa-file-text-o"></i> Txt</a></li>
+                            </ul>
+                        </div>
+					</div>
 					<div class="table table-responsive">
 		            	<table class="table table-striped table-bordered table-hover" id="statistic_reporting" cellspacing="0" width="100%">
 		                    <thead>
@@ -101,23 +113,15 @@
     	$(function () {
     		$('#statistic_reporting').DataTable({
     			responsive: true,
-    			dom: 'lBfrtip',
-    			buttons: [
-    			     {
-		                  text    : '<i class="fa fa-download"></i> XLS',
-		                  extend  : 'excel'
-		              },
-		              // {
-		              //     text    : '<i class="fa fa-download"></i> PDF',
-		              //     extend  : 'pdfHtml5',
-		              //     orientation: 'landscape',
-		              //     pageSize: 'LEGAL',
-		              // },
-		              {
-		                  text    : '<i class="fa fa-download"></i> CSV',
-		                  extend  : 'csv'
-		              }
-    			]
+    			language: {
+			       lengthMenu: "<?= $this->lang->line('dt_show') ?> _MENU_ <?= $this->lang->line('dt_record') ?> <?= $this->lang->line('dt_per_page') ?>",
+			       zeroRecords: "<?= $this->lang->line('dt_empty') ?>",
+			       info: "<?= $this->lang->line('dt_show') ?> <?= $this->lang->line('dt_page') ?> _PAGE_ <?= $this->lang->line('dt_of') ?> _PAGES_ <?= $this->lang->line('dt_page') ?>",
+			       infoEmpty: "<?= $this->lang->line('dt_empty') ?>",
+			       infoFiltered: "<?= $this->lang->line('dt_filtered') ?> <?= $this->lang->line('dt_of') ?> _MAX_ <?= $this->lang->line('dt_record') ?>)",
+			       search: "<?= $this->lang->line('dt_search') ?>",
+			       processing: "<?= $this->lang->line('dt_processsing') ?>"
+			    }
     		});
     	});
     </script>
