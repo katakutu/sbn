@@ -28,23 +28,32 @@ class Investor extends CI_Controller {
 
 	function statistic_export_csv()
 	{
+		ob_clean();
 		$filename = 'static_export'.date('dmYHis').'.csv';
-		header('Content-Type: text/csv; charset=utf-8');
+		header('Content-Transfer-Encoding: UTF-8');
+		header('Content-type: text/csv');
 		header('Content-Disposition: attachment; filename='.$filename);
+		header('Pragma: no-cache');
+        header('Expires: 0');
 
 		// create a file pointer connected to the output stream
-		$output = fopen('php://output', 'w');
+		$output = fopen('php://output', 'wb');
 
 		// output the column headings
 		// fputcsv($output, array('NAMA', 'TANGGAL TRANSAKSI', 'NOMOR ORDER', 'STATUS TRANSAKSI'));
 		$data = $this->reportinginvestor_model->get_statistic_all();
 		foreach ($data as $key) {
-		   	fputcsv($output, array($key['NAME'], $key['gender'], $key['email'], $key['idcard_no'], $key['NPWP'], $key['SID'], $key['SUBREG'], $key['address'], $key['phone_no'], $key['mobilephone_no'], $key['NOMOR_REKENING'], $key['creation_date']));	
-		}	  	
+			// if(trim($key) !=''){
+			  fputcsv($output, array($key['NAME'], $key['gender'], $key['email'], $key['idcard_no'], $key['NPWP'], $key['SID'], $key['SUBREG'], $key['address'], $key['phone_no'], $key['mobilephone_no'], $key['NOMOR_REKENING'], $key['creation_date']));	
+			// }
+		   		
+		}	
+		ob_flush();  	
 	}
 
 	function statistic_export_xls()
 	{
+		ob_clean();
 		$filename = 'static_export'.date('dmYHis').'.xls';
         header('Content-Disposition: attacment;filename='.$filename);
 		echo '<table style="border-collapse: collapse;" border="1">
@@ -92,10 +101,12 @@ class Investor extends CI_Controller {
                   
        echo '	  </tbody>
             </table>';
+       ob_flush();
 	}
 
 	function statistic_export_txt()
 	{
+		ob_clean();
 		$separator = "\t";
 		$filename = 'static_export'.date('dmYHis').'.txt';
 		header('Content-Type: text/plain');
@@ -104,8 +115,9 @@ class Investor extends CI_Controller {
 		
 		$data = $this->reportinginvestor_model->get_statistic_all();
 		foreach($data as $key) {
-			 echo $key['NAME'].$separator.$key['gender'].$separator.$key['email'].$separator.$key['idcard_no'].$separator.$key['NPWP'].$separator.$key['SID'].$separator.$key['SUBREG'].$separator.['address'].$separator.$key['phone_no'].$separator.$key['mobilephone_no'].$separator.$key['NOMOR_REKENING'].$separator.$key['creation_date']."\r\n";
+			 echo $key['NAME'].$separator.$key['gender'].$separator.$key['email'].$separator.$key['idcard_no'].$separator.$key['NPWP'].$separator.$key['SID'].$separator.$key['SUBREG'].$separator.$key['address'].$separator.$key['phone_no'].$separator.$key['mobilephone_no'].$separator.$key['NOMOR_REKENING'].$separator.$key['creation_date']."\r\n";
 		}
+	   ob_flush();
 		
 	}
 
@@ -119,6 +131,7 @@ class Investor extends CI_Controller {
 
 	function portofolio_export_xls()
 	{
+		ob_clean();
 		$filename = 'portofolio_export'.date('dmYHis').'.xls';
         header('Content-Disposition: attacment;filename='.$filename);
 		echo '<table border="1">
@@ -150,6 +163,7 @@ class Investor extends CI_Controller {
                   
        echo '	  </tbody>
             </table>';
+       ob_flush();
 	}
 }
 

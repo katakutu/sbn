@@ -35,12 +35,16 @@ class Reporting extends CI_Controller {
 
 	function daily_export_csv($id)
 	{
+		ob_clean();
 		$filename = 'daily_export'.date('dmYHis').'.csv';
-		header('Content-Type: text/csv; charset=utf-8');
+		header('Content-Transfer-Encoding: UTF-8');
+		header('Content-type: text/csv');
 		header('Content-Disposition: attachment; filename='.$filename);
+		header('Pragma: no-cache');
+        header('Expires: 0');
 
 		// create a file pointer connected to the output stream
-		$output = fopen('php://output', 'w');
+		$output = fopen('php://output', 'wb');
 
 		// output the column headings
 		// fputcsv($output, array('NAMA', 'TANGGAL TRANSAKSI', 'NOMOR ORDER', 'STATUS TRANSAKSI'));
@@ -48,14 +52,17 @@ class Reporting extends CI_Controller {
 		  
 		    $data = $this->reportingtransaction_model->get_daily($id);
 		    foreach ($data as $key) {
-		    	fputcsv($output, array($key['NAME'], date('Y-m-d H:i:s', strtotime($key['creation_date'])), $key['order_id'], $key['status']));	
+	            fputcsv($output, array_values($key));
 		    }
 		  	
 		} 
+		fclose($output);
+		ob_flush();
 	}
 
 	function daily_export_xls($id)
 	{
+		ob_clean();
 		$filename = 'daily_export'.date('dmYHis').'.xls';
         header('Content-Disposition: attacment;filename='.$filename);
 		echo '<table style="border-collapse: collapse;" border="1">
@@ -81,10 +88,10 @@ class Reporting extends CI_Controller {
                                  <td>
                                  '.$key['NAME'].'
                                  </td>
-                                 <td style="text-align: center;">
+                                 <td style="text-align: center;mso-number-format:\@;">
                                  '.date('d-m-Y H:i:s', strtotime($key['creation_date'])).'
                                  </td>
-                                 <td style="text-align: center;">
+                                 <td style="text-align: center;mso-number-format:\@;">
                                  '.$key['order_id'].'
                                  </td>
                                  <td style="text-align: center;">
@@ -95,10 +102,12 @@ class Reporting extends CI_Controller {
                   }
        echo '	  </tbody>
             </table>';
+       ob_flush();
 	}
 
 	function daily_export_txt($id)
 	{
+		ob_clean();
 		$separator = "\t";
 		$filename = 'daily_export'.date('dmYHis').'.txt';
 		header('Content-Type: text/plain');
@@ -110,6 +119,7 @@ class Reporting extends CI_Controller {
 			 echo $key['NAME'].$separator.date('Y-m-d H:i:s', strtotime($key['creation_date'])).$separator.$key['order_id'].$separator.$key['status']."\r\n";
 		   }
 		}
+		ob_flush();
 	}
 
 	function final_transaction()
@@ -130,12 +140,16 @@ class Reporting extends CI_Controller {
 
 	function final_transaction_export_csv($id)
 	{
+		ob_clean();
 		$filename = 'final_transaction_export'.date('dmYHis').'.csv';
-		header('Content-Type: text/csv; charset=utf-8');
+		header('Content-Transfer-Encoding: UTF-8');
+		header('Content-type: text/csv');
 		header('Content-Disposition: attachment; filename='.$filename);
+		header('Pragma: no-cache');
+        header('Expires: 0');
 
 		// create a file pointer connected to the output stream
-		$output = fopen('php://output', 'w');
+		$output = fopen('php://output', 'wb');
 
 		// output the column headings
 		// fputcsv($output, array('KODE PEMESANAN', 'KODE BILLING', 'NTPN', 'NTB', 'STATUS PEMESANAN', 'SERI', 'MITRA DISTRIBUSI', 'SID', 'NAMA', 'AMOUNT', 'NOMOR REKENING', 'NOMOR IDENTITAS', 'TEMPAT LAHIR', 'TANGGAL LAHIR', 'JENIS KELAMIN', 'PEKERJAAN', 'ALAMAT', 'KODE KOTA', 'KODE PROVINSI', 'NOMOR TELEPON', 'NOMOR HANDPHONE', 'EMAIL', 'TANGGAL PEMESANAN', 'NOMOR REKENING SECURITIES', 'KODE BANK', 'KUSTODIAN'));
@@ -143,14 +157,17 @@ class Reporting extends CI_Controller {
 		  
 		    $data = $this->reportingtransaction_model->get_final_transaction_all($id);
 		    foreach ($data as $value) {
-		    	fputcsv($output, array($value['order_id'],$value['billing_code'],$value['ntpn'],$value['ntb'],$value['status'],$value['seri_name'],$value['created_by'],$value['sid'],$value['NAME'],$value['amount'],$value['NOMOR_REKENING'],$value['NOMOR_KTP'],$value['TEMPAT_LAHIR'],date('Y-m-d', strtotime($value['TANGGAL_LAHIR'])),$value['GENDER'] == 1 ? 'Laki-laki' : 'Perempuan',$value['PEKERJAAN'],$value['ALAMAT'],$value['KODE_KOTA'],$value['KODE_PROVINSI'],$value['NOMOR_TELEPON'],$value['NOMOR_HANDPHONE'],$value['EMAIL'],$value['creation_date'],$value['sec_account_no'],$value['KODE_BANK'],$value['subreg_name']));	
+		    	$gender = (($value['GENDER'] == 1) ? 'Laki-laki' : 'Perempuan');
+		    	fputcsv($output, array($value['order_id'],$value['billing_code'],$value['ntpn'],$value['ntb'],$value['status'],$value['seri_name'],$value['created_by'],$value['sid'],$value['NAME'],$value['amount'],$value['NOMOR_REKENING'],$value['NOMOR_KTP'],$value['TEMPAT_LAHIR'],date('Y-m-d', strtotime($value['TANGGAL_LAHIR'])),$gender,$value['PEKERJAAN'],$value['ALAMAT'],$value['KODE_KOTA'],$value['KODE_PROVINSI'],$value['NOMOR_TELEPON'],$value['NOMOR_HANDPHONE'],$value['EMAIL'],$value['creation_date'],$value['sec_account_no'],$value['KODE_BANK'],$value['subreg_name']));	
 		    }
 		  	
 		} 
+		ob_flush();
 	}
 
 	function final_transaction_export_xls($id)
 	{
+		ob_clean();
 		$filename = 'final_transaction_export'.date('dmYHis').'.xls';
         header('Content-Disposition: attacment;filename='.$filename);
 		echo '<table style="border-collapse: collapse;" border="1">
@@ -195,52 +212,59 @@ class Reporting extends CI_Controller {
                   	$data = $this->reportingtransaction_model->get_final_transaction_all($id);
 					foreach ($data as $value) {
 					    echo '<tr>
-                                 <td>'.$value['order_id'].'</td>
-		                    	 <td>'.$value['billing_code'].'</td>
+                                 <td style="text-align: center;mso-number-format:\@;">'.$value['order_id'].'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['billing_code'].'</td>
 		                    	 <td>'.$value['ntpn'].'</td>
-		                    	 <td>'.$value['ntb'].'</td>
-		                    	 <td>'.$value['status'].'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['ntb'].'</td>
+		                    	 <td style="text-align:center;">'.$value['status'].'</td>
 		                    	 <td>'.$value['seri_name'].'</td>
 		                    	 <td>'.$value['created_by'].'</td>
 		                    	 <td>'.$value['sid'].'</td>
 		                    	 <td>'.$value['NAME'].'</td>
-		                    	 <td>'.number_format($value['amount'],0,'.',',').'</td>
+		                    	 <td style="text-align:right;mso-number-format:\@;">'.number_format($value['amount'],0,'.',',').'</td>
 		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_REKENING'].'</td>
 		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_KTP'].'</td>
 		                    	 <td>'.$value['TEMPAT_LAHIR'].'</td>
-		                    	 <td>'.date('d-m-Y', strtotime($value['TANGGAL_LAHIR'])).'</td>
+		                    	 <td style="text-align: center;mso-number-format:\@;">'.date('d-m-Y', strtotime($value['TANGGAL_LAHIR'])).'</td>
 		                    	 <td>'.(($value['GENDER'] == 1) ? 'Laki-laki' : 'Perempuan').'</td>
 		                    	 <td>'.$value['PEKERJAAN'].'</td>
 		                    	 <td>'.$value['ALAMAT'].'</td>
-		                    	 <td style="mso-number-format:\@;">'.$value['KODE_KOTA'].'</td>
-		                    	 <td style="mso-number-format:\@;">'.$value['KODE_PROVINSI'].'</td>
+		                    	 <td style="text-align: center;mso-number-format:\@;">'.$value['KODE_KOTA'].'</td>
+		                    	 <td style="text-align: center;mso-number-format:\@;">'.$value['KODE_PROVINSI'].'</td>
 		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_TELEPON'].'</td>
 		                    	 <td style="mso-number-format:\@;">'.$value['NOMOR_HANDPHONE'].'</td>
 		                    	 <td>'.$value['EMAIL'].'</td>
-		                    	 <td>'.date('d-m-Y H:i:s', strtotime($value['creation_date'])).'</td>
-		                    	 <td>'.$value['sec_account_no'].'</td>
-		                    	 <td>'.$value['KODE_BANK'].'</td>
+		                    	 <td style="text-align:center;mso-number-format:\@;">'.date('d-m-Y H:i:s', strtotime($value['creation_date'])).'</td>
+		                    	 <td style="mso-number-format:\@;">'.$value['sec_account_no'].'</td>
+		                    	 <td style="text-align: center;mso-number-format:\@;">'.$value['KODE_BANK'].'</td>
 		                    	 <td>'.$value['subreg_name'].'</td>
                               </tr>'; 	
 					}
                   }
        echo '	  </tbody>
             </table>';
+       ob_flush();
 	}
 
 	function final_transaction_export_txt($id)
 	{
+		ob_clean();
 		$separator = "\t";
 		$filename = 'final_transaction_export'.date('dmYHis').'.txt';
 		header('Content-Type: text/plain');
 		header('Content-Disposition: attachment; filename='.$filename);
 		// echo "KODE PEMESANAN".$separator."KODE BILLING".$separator."NTPN".$separator."NTB".$separator."STATUS PEMESANAN".$separator."SERI".$separator."MITRA DISTRIBUSI".$separator."SID".$separator."NAMA".$separator."AMOUNT".$separator."NOMOR REKENING".$separator."NOMOR IDENTITAS".$separator."TEMPAT LAHIR".$separator."TANGGAL LAHIR".$separator."JENIS KELAMIN".$separator."PEKERJAAN".$separator."ALAMAT".$separator."KODE KOTA".$separator."KODE PROVINSI".$separator."NOMOR TELEPON".$separator."NOMOR HANDPHONE".$separator."EMAIL".$separator."TANGGAL PEMESANAN".$separator."NOMOR REKENING SECURITIES".$separator."KODE BANK".$separator."KUSTODIAN\r\n";
+		$text = '';
 		if($id!=''){
 		   $data = $this->reportingtransaction_model->get_final_transaction_all($id);
 		   foreach($data as $value) {
-			 echo $value['order_id'].$separator.$value['billing_code'].$separator.$value['ntpn'].$separator.$value['ntb'].$separator.$value['status'].$separator.$value['seri_name'].$separator.$value['created_by'].$separator.$value['sid'].$separator.$value['NAME'].$separator.$value['amount'].$separator.$value['NOMOR_REKENING'].$separator.$value['NOMOR_KTP'].$separator.$value['TEMPAT_LAHIR'].$separator.date('Y-m-d', strtotime($value['TANGGAL_LAHIR'])).$separator.$value['GENDER'] == 1 ? 'Laki-laki' : 'Perempuan'.$separator.$value['PEKERJAAN'].$separator.$value['ALAMAT'].$separator.$value['KODE_KOTA'].$separator.$value['KODE_PROVINSI'].$separator.$value['NOMOR_TELEPON'].$separator.$value['NOMOR_HANDPHONE'].$separator.$value['EMAIL'].$separator.$value['creation_date'].$separator.$value['sec_account_no'].$separator.$value['KODE_BANK'].$separator.$value['subreg_name']."\r\n";
+		   	 $gender = (($value['GENDER'] == 1) ? 'Laki-laki' : 'Perempuan');
+			 $text .= $value['order_id'].$separator.$value['billing_code'].$separator.$value['ntpn'].$separator.$value['ntb'].$separator.$value['status'].$separator.$value['seri_name'].$separator.$value['created_by'].$separator.$value['sid'].$separator.$value['NAME'].$separator.$value['amount'].$separator.$value['NOMOR_REKENING'].$separator.$value['NOMOR_KTP'].$separator.$value['TEMPAT_LAHIR'].$separator.date('Y-m-d', strtotime($value['TANGGAL_LAHIR'])).$separator.$gender.$separator.$value['PEKERJAAN'].$separator.$value['ALAMAT'].$separator.$value['KODE_KOTA'].$separator.$value['KODE_PROVINSI'].$separator.$value['NOMOR_TELEPON'].$separator.$value['NOMOR_HANDPHONE'].$separator.$value['EMAIL'].$separator.$value['creation_date'].$separator.$value['sec_account_no'].$separator.$value['KODE_BANK'].$separator.$value['subreg_name']."\r\n";
 		   }
+
 		}
+		print($text);
+		ob_flush();
 	}
 }
 
