@@ -30,14 +30,14 @@
 					<li class="active"><?= $this->lang->line('manajemen_content') ?></li>
 					<li class="active"><?= $this->lang->line('manajemen_content_data') ?></li>
 				</ol>
-				<?php if ($message) { ?>
-					<div id="message" class="alert alert-<?= $msg_type ?>" role="alert">
-						 <span class="glyphicon glyphicon-<?= $msg_icon ?>" aria-hidden="true"></span>
-						 <span class="sr-only">Info:</span>
-						 <?= $this->lang->line($message)?>. <?php if ($addition) { ?><?= $this->lang->line($addition) ?><?php } ?>
-					</div>
-				<?php } ?>
-				<div class="panel-body">
+				<div class="panel-body" style="margin-top: -20px;">
+					<?php if ($message) { ?>
+						<div id="message" class="alert alert-<?= $msg_type ?>" role="alert">
+							 <span class="glyphicon glyphicon-<?= $msg_icon ?>" aria-hidden="true"></span>
+							 <span class="sr-only">Info:</span>
+							 <?= $this->lang->line($message)?>. <?php if ($addition) { ?><?= $this->lang->line($addition) ?><?php } ?>
+						</div>
+					<?php } ?>
 					<div><button class="btn btn-primary" data-toggle="modal" data-target="#addContent"><i class="fa fa-plus"></i> <?php echo $this->lang->line('manajemen_content_add');?></button></div>
 					<div class="table table-responsive">
 		            	<table class="table table-striped table-bordered table-hover" id="manajemen_content" cellspacing="0" width="100%">

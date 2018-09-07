@@ -19,24 +19,6 @@
 		<script type="text/javascript" src="<?=base_url();?>js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="<?=base_url();?>plugin/bootstrap/js/bootstrap.min.js"></script>
 	</head>
-	<style>
-		th { font-size: 11px; }
-		td { font-size: 11px; }
-		.panel-primary { border-color: black; }
-		.modal-header {
-			color: #fff;
-		    padding:9px 15px;
-		    border-bottom:1px solid #eee;
-		    background-color: #ec971f;
-		    -webkit-border-top-left-radius: 5px;
-		    -webkit-border-top-right-radius: 5px;
-		    -moz-border-radius-topleft: 5px;
-		    -moz-border-radius-topright: 5px;
-		     border-top-left-radius: 5px;
-		     border-top-right-radius: 5px;
-		 }
-
-	</style>
 	<body oncontextmenu="return false">
 		<div class="panel panel-primary">
 			<h3 style="text-align: right; padding-right: 25px">
@@ -48,10 +30,14 @@
 					<li class="active"><?= $this->lang->line('manajemen_user') ?></li>
 					<li class="active"><?= $this->lang->line('manajemen_user_reactivation_link') ?></li>
 				</ol>
-
-				
-				<br>
-				<div class="panel-body">
+				<?php if ($message) { ?>
+					<div id="message" class="alert alert-<?= $msg_type ?>" role="alert">
+						 <span class="glyphicon glyphicon-<?= $msg_icon ?>" aria-hidden="true"></span>
+						 <span class="sr-only">Info:</span>
+						 <?= $this->lang->line($message)?>. <?php if ($addition) { ?><?= $this->lang->line($addition) ?><?php } ?>
+					</div>
+				<?php } ?>
+				<div class="panel-body" style="margin-top: -20px;">
 					<div class="table table-responsive">
 		            	<table class="table table-striped table-bordered table-hover" id="manajemen_activation" cellspacing="0" width="100%">
 		                    <thead>

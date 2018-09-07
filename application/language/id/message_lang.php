@@ -899,7 +899,7 @@ $lang['faq_n_guide'] = 'FAQ & Panduan';
 /* Tambahan by Indras*/
 $lang['manajemen'] = 'Manajemen';
 $lang['manajemen_content'] = 'Konten';
-$lang['manajemen_content_add'] = 'Tambah Konten';
+$lang['manajemen_content_add'] = 'Konten Baru';
 $lang['manajemen_content_data'] = 'Data Konten';
 $lang['manajemen_content_form_add'] = 'Form Tambah Konten';
 $lang['manajemen_content_form_update'] = 'Form Update Konten';
