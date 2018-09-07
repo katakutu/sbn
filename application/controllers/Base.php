@@ -26,11 +26,11 @@ class Base extends CI_Controller {
 		$user = $this->User->get_username($this->sess['userid']);
 		foreach ($user ->result() as $row) {
 			$data['name'] = ucwords(strtolower($row->NAME));
-			$data['name_detail'] = '<b>Email 		:</b> xxx'.substr($row->EMAIL, strlen($row->EMAIL) - 15, strlen($row->EMAIL)).'<br />';
-			$data['name_detail'] .= '<b>SID Investor :</b> '.$row->SID.'<br />';
-			$data['name_detail'] .= '<b>Sub Registri  :</b> '.$row->SUBREG.'<br />';
-			$data['name_detail'] .= '<b>Last login :</b> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGIN)).'<br />';
-			$data['name_detail'] .= '<b>Last logout :</b> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGOUT)).'<br />';
+			$data['name_detail'] = '<strong>Email 		:</strong> xxx'.substr($row->EMAIL, strlen($row->EMAIL) - 15, strlen($row->EMAIL)).'<br />';
+			$data['name_detail'] .= '<strong>SID Investor :</strong> '.$row->SID.'<br />';
+			$data['name_detail'] .= '<strong>Sub Registri  :</strong> '.$row->SUBREG.'<br />';
+			$data['name_detail'] .= '<strong>Last login :</strong> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGIN)).'<br />';
+			$data['name_detail'] .= '<strong>Last logout :</strong> <br />'.date('d M Y H:i:s', strtotime($row->LASTLOGOUT)).'<br />';
 			
 			$prev_password = $row->PREVPASSWORD;
 		}

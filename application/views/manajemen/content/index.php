@@ -19,24 +19,6 @@
 		<script type="text/javascript" src="<?=base_url();?>js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="<?=base_url();?>plugin/bootstrap/js/bootstrap.min.js"></script>
 	</head>
-	<style>
-		th { font-size: 11px; }
-		td { font-size: 11px; }
-		.panel-primary { border-color: black; }
-		.modal-header {
-			color: #fff;
-		    padding:9px 15px;
-		    border-bottom:1px solid #eee;
-		    background-color: #ec971f;
-		    -webkit-border-top-left-radius: 5px;
-		    -webkit-border-top-right-radius: 5px;
-		    -moz-border-radius-topleft: 5px;
-		    -moz-border-radius-topright: 5px;
-		     border-top-left-radius: 5px;
-		     border-top-right-radius: 5px;
-		 }
-
-	</style>
 	<body oncontextmenu="return false">
 		<div class="panel panel-primary">
 			<h3 style="text-align: right; padding-right: 25px">
@@ -48,9 +30,13 @@
 					<li class="active"><?= $this->lang->line('manajemen_content') ?></li>
 					<li class="active"><?= $this->lang->line('manajemen_content_data') ?></li>
 				</ol>
-
-				
-				<br>
+				<?php if ($message) { ?>
+					<div id="message" class="alert alert-<?= $msg_type ?>" role="alert">
+						 <span class="glyphicon glyphicon-<?= $msg_icon ?>" aria-hidden="true"></span>
+						 <span class="sr-only">Info:</span>
+						 <?= $this->lang->line($message)?>. <?php if ($addition) { ?><?= $this->lang->line($addition) ?><?php } ?>
+					</div>
+				<?php } ?>
 				<div class="panel-body">
 					<div><button class="btn btn-primary" data-toggle="modal" data-target="#addContent"><i class="fa fa-plus"></i> <?php echo $this->lang->line('manajemen_content_add');?></button></div>
 					<div class="table table-responsive">

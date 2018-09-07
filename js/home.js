@@ -55,6 +55,10 @@ function logout() {
     $("#logout").modal("show")
 }
 
+function tambah_konten() {
+    $("#addContent").modal("show")
+}
+
 function goto(e) {
     waitingDialog.show(), frames.content.location.href = e, waitingDialog.hide(), window.innerWidth <= 768 && $("#sidemenu").collapse("toggle")
 }

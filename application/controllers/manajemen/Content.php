@@ -4,7 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Content extends CI_Controller {
 	var $sess;
 	var $sessLang;
-	var $CI;
 
 	/*
 	* method constructor untuk class content.
@@ -16,7 +15,6 @@ class Content extends CI_Controller {
 		$this->sess = $this->session->userdata('session');
 		$this->sessLang = $this->session->userdata('session_lang');
 		$this->load->model('managementcontent_model');
-		$this->CI =& get_instance();
 	}
 
 	function index()
