@@ -20,8 +20,8 @@ class Reporting extends CI_Controller {
 	function daily()
 	{
 		if(isset($_POST['cari'])){
-		  if(isset($_POST['tgl']) && $_POST['tgl']!=''){
-		    $data['data'] = $this->reportingtransaction_model->get_daily($_POST['tgl']);	
+		  if(isset($_POST['seri']) && $_POST['seri']!=''){
+		    $data['data'] = $this->reportingtransaction_model->get_daily($_POST['seri']);	
 		  } else {
 		    $data['data'] = array();	
 		  }
@@ -108,7 +108,7 @@ class Reporting extends CI_Controller {
 	function daily_export_txt($id)
 	{
 		ob_clean();
-		$separator = "\t";
+		$separator = ",";
 		$filename = 'daily_export'.date('dmYHis').'.txt';
 		header('Content-Type: text/plain');
 		header('Content-Disposition: attachment; filename='.$filename);
@@ -125,8 +125,8 @@ class Reporting extends CI_Controller {
 	function final_transaction()
 	{
 		if(isset($_POST['cari'])){
-		  if(isset($_POST['tgl']) && $_POST['tgl']!=''){
-			$data['data'] = $this->reportingtransaction_model->get_final_transaction_all($_POST['tgl']);
+		  if(isset($_POST['seri']) && $_POST['seri']!=''){
+			$data['data'] = $this->reportingtransaction_model->get_final_transaction_all($_POST['seri']);
 		  } else {
 		  	$data['data'] = array();
 		  }
@@ -249,7 +249,7 @@ class Reporting extends CI_Controller {
 	function final_transaction_export_txt($id)
 	{
 		ob_clean();
-		$separator = "\t";
+		$separator = ",";
 		$filename = 'final_transaction_export'.date('dmYHis').'.txt';
 		header('Content-Type: text/plain');
 		header('Content-Disposition: attachment; filename='.$filename);
@@ -265,6 +265,20 @@ class Reporting extends CI_Controller {
 		}
 		print($text);
 		ob_flush();
+	}
+
+	function get_seri_name(){
+		$keyword = strval($_POST['query']);
+		$q = "SELECT seri_name FROM orders WHERE seri_name LIKE '$keyword%' GROUP BY seri_name";
+		$query = $this->db->query($q);
+		$seriResult = array();
+		if($query->num_rows() > 0){
+		    foreach ($query->result_array() as $value) {
+				$seriResult[] = $value["seri_name"];
+			}
+			echo json_encode($seriResult);	
+		}
+		
 	}
 }
 

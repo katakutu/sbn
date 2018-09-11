@@ -30,12 +30,19 @@
 					<li class="active"><?= $this->lang->line('manajemen_user') ?></li>
 					<li class="active"><?= $this->lang->line('manajemen_user_reactivation_link') ?></li>
 				</ol>
-				<?php if ($message) { ?>
-					<div id="message" class="alert alert-<?= $msg_type ?>" role="alert">
-						 <span class="glyphicon glyphicon-<?= $msg_icon ?>" aria-hidden="true"></span>
+				<?php if ($this->session->flashdata('message') != '') { ?>
+					<div id="message" class="alert alert-success" role="alert">
+						 <span class="fa fa-check-circle" aria-hidden="true"></span>
 						 <span class="sr-only">Info:</span>
-						 <?= $this->lang->line($message)?>. <?php if ($addition) { ?><?= $this->lang->line($addition) ?><?php } ?>
-					</div>
+						 <?= $this->session->flashdata('message') ?>
+				   </div>
+				<?php } ?>
+				<?php if ($this->session->flashdata('error') != '') { ?>
+					<div id="message" class="alert alert-danger" role="alert">
+						 <span class="fa fa-warning" aria-hidden="true"></span>
+						 <span class="sr-only">Info:</span>
+						 <?= $this->session->flashdata('error') ?>
+				   </div>
 				<?php } ?>
 				<div class="panel-body" style="margin-top: -20px;">
 					<div class="table table-responsive">
@@ -73,31 +80,6 @@
 				</div>
             </div>
 		</div>
-
-		<!-- Modal -->
-		<div id="contentMessage" class="modal" role="dialog">
-		  <div class="modal-dialog">
-
-		    <!-- Modal content-->
-		    <div class="modal-content">
-		      <div class="modal-header">
-		        <button type="button" class="close" data-dismiss="modal">&times;</button>
-		        <h4 class="modal-title"><?php echo $this->lang->line('message');?></h4>
-		      </div>
-		      <div class="modal-body">
-		        
-		        	<?php echo $this->session->flashdata('message');?>
-		        	<?php echo $this->session->flashdata('error');?>
-		       
-		      </div>
-		      <div class="modal-footer">
-		        <button type="button" class="btn btn-warning" data-dismiss="modal"><?php echo $this->lang->line('close');?></button>
-		      </div>
-		       </form>
-		    </div>
-
-		  </div>
-		</div>
 	</body>
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>plugin/DataTables-1.10.16/css/dataTables.bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?=base_url();?>css/responsive.bootstrap.min.css">
@@ -123,15 +105,6 @@
 			       }
 			   }
     		});
-    		var message = '<?=$this->session->flashdata("message")?>';
-    		var error = '<?=$this->session->flashdata("error")?>';
-    		if(message!=''){
-    			$('#contentMessage').modal('show');
-    		}
-
-    		if(error!=''){
-    			$('#contentMessage').modal('show');
-    		}
     	});
     </script>
 </html>

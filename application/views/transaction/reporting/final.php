@@ -30,25 +30,20 @@
 					<li><?= $this->lang->line('transaction report') ?></li>
 					<li class="active"><?= $this->lang->line('final transaction report') ?></li>
 				</ol>
-
-				
-				<br>
 				<div class="panel-body">
 					<div style="width: 100%;">
 						<?php 
-	                            $kunci = isset($_POST['tgl']) && $_POST['tgl'] !='' ? '/'.$_POST['tgl'] : '/';
+	                            $kunci = isset($_POST['seri']) && $_POST['seri'] !='' ? '/'.$_POST['seri'] : '/';
 	                    ?>
 						<form method="post" action="<?php echo base_url();?>TransactionReport.jsp/final">
-									<div style="width: 10%;float:left;margin-top: 10px;"><?=$this->lang->line('d')?></div>
+									<div style="width: 7%;float:left;margin-top: 10px;"><?=$this->lang->line('seri')?></div>
 									<div style="width: 20%;float:left;">
-										<input type="text" name="tgl" class="form-control datepicker" value="<?php echo isset($_POST['tgl']) && $_POST['tgl']!='' ? $_POST['tgl'] : ''?>">
+										<input type="text" name="seri" id="seri" class="form-control" value="<?php echo isset($_POST['seri']) && $_POST['seri']!='' ? $_POST['seri'] : ''?>" autocomplete="off">
 									</div>
-									<div style="width: 20%;float:left;">
-										&nbsp;&nbsp; <a href="<?php echo base_url();?>TransactionReport.jsp/final" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</a> &nbsp;
+									<div style="width: 63%;float:left;">
+										&nbsp;<a href="<?php echo base_url();?>TransactionReport.jsp/final" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</a>
 										<input type="submit" name="cari" value="<?=$this->lang->line('search')?>" class="btn btn-success">
-									</div>
-									<div style="width: 50%;float:left;">
-										<div class="btn-group" style="float: right;">
+										<div class="btn-group" style="">
                                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                             Export <span class="caret"></span>
                                           </button>
@@ -151,13 +146,25 @@
     <script src="<?=base_url();?>plugin/pdfmake-0.1.32/vfs_fonts.js"></script>
     <script src="<?=base_url();?>plugin/Buttons-1.5.1/js/buttons.html5.min.js"></script>
     <script src="<?=base_url();?>js/bootstrap-datepicker.min.js"></script>
+    <script src="<?=base_url();?>js/bootstrap3-typeahead.min.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
     	$(function () {
-    		$('.datepicker').datepicker({
-    			format: 'yyyy-mm-dd',
-    			autoclose: true
-    		});
+	    		$('#seri').typeahead({
+	            source: function (query, result) {
+	                $.ajax({
+	                    url: "<?=base_url()?>getSeriName.jsp",
+						data: 'query=' + query,            
+	                    dataType: "json",
+	                    type: "POST",
+	                    success: function (data) {
+							result($.map(data, function (item) {
+								return item;
+	                        }));
+	                    }
+	                });
+	            }
+	        });
     		$('#final_reporting').DataTable({
     			responsive: true,
     			language: {

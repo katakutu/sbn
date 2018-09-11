@@ -107,7 +107,7 @@ class Investor extends CI_Controller {
 	function statistic_export_txt()
 	{
 		ob_clean();
-		$separator = "\t";
+		$separator = ",";
 		$filename = 'static_export'.date('dmYHis').'.txt';
 		header('Content-Type: text/plain');
 		header('Content-Disposition: attachment; filename='.$filename);

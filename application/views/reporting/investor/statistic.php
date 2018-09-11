@@ -30,9 +30,6 @@
 					<li><?= $this->lang->line('investor report') ?></li>
 					<li class="active"><?= $this->lang->line('customer statistic report') ?></li>
 				</ol>
-
-				
-				<br>
 				<div class="panel-body">
 					<div>
 						<div class="btn-group">

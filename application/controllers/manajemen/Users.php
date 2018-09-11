@@ -25,11 +25,17 @@ class Users extends CI_Controller {
 	}
 
 	function psend_activation($id){
-		$email = $this->get_email_user($id);
-		$name = $this->get_name_user($id);
-		$this->sbn_email->email_send_activation($email, $name);
-        $this->session->set_flashdata('message', $this->lang->line('success_send_link_activation'));
-            redirect('SendActivation.jsp');
+		// $email = $this->get_email_user($id);
+		// $name = $this->get_name_user($id);
+		// $this->sbn_email->email_send_activation($email, $name);
+        $p = $this->managementuser_model->send_activation($id);
+        if($p){
+          $this->session->set_flashdata('message', $this->lang->line('success_send_link_activation'));    
+        } else {
+          $this->session->set_flashdata('error', $this->lang->line('error_send_link_activation'));  
+        }
+        
+        redirect('SendActivation.jsp');
 	}
 
     function unlock()
@@ -44,7 +50,7 @@ class Users extends CI_Controller {
     {
         $this->managementuser_model->unlock($id);
         $this->session->set_flashdata('message', $this->lang->line('success_unlock'));
-            redirect('UnlockUser.jsp');
+        redirect('UnlockUser.jsp');
     }
 
     function get_email_user(){

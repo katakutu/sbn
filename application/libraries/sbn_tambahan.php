@@ -8,7 +8,7 @@ class Sbn_tambahan {
 	}
 
 	public function get_portofolio_detail($uid){
-		$this->CI->db->select('order_id,creation_date,amount,status');
+		$this->CI->db->select('order_id,seri_name,creation_date,amount,status');
 		$this->CI->db->from('orders');
 		$this->CI->db->where('uid', $uid);
 		$query = $this->CI->db->get('');

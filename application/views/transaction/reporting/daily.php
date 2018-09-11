@@ -30,9 +30,6 @@
 					<li><?= $this->lang->line('transaction report') ?></li>
 					<li class="active"><?= $this->lang->line('daily sales report') ?></li>
 				</ol>
-
-				
-				<br>
 				<div class="panel-body">
 					<div style="width: 100%;">
 						<?php 
@@ -43,12 +40,10 @@
 									<div style="width: 20%;float:left;">
 										<input type="text" name="tgl" class="form-control datepicker" value="<?php echo isset($_POST['tgl']) && $_POST['tgl']!='' ? $_POST['tgl'] : ''?>">
 									</div>
-									<div style="width: 20%;float:left;">
-										&nbsp;&nbsp; <a href="<?php echo base_url();?>TransactionReport.jsp/daily" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</a> &nbsp;
+									<div style="width: 70%;float:left;">
+										&nbsp;&nbsp; <a href="<?php echo base_url();?>TransactionReport.jsp/daily" class="btn btn-default"><i class="fa fa-refresh"></i> Reset</a>
 										<input type="submit" name="cari" value="<?=$this->lang->line('search')?>" class="btn btn-success">
-									</div>
-									<div style="width: 50%;float:left;">
-										<div class="btn-group" style="float: right;">
+										<div class="btn-group">
                                           <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                                             Export <span class="caret"></span>
                                           </button>

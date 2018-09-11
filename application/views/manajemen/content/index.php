@@ -31,11 +31,18 @@
 					<li class="active"><?= $this->lang->line('manajemen_content_data') ?></li>
 				</ol>
 				<div class="panel-body" style="margin-top: -20px;">
-					<?php if ($message) { ?>
-						<div id="message" class="alert alert-<?= $msg_type ?>" role="alert">
-							 <span class="glyphicon glyphicon-<?= $msg_icon ?>" aria-hidden="true"></span>
+					<?php if ($this->session->flashdata('message')!='') { ?>
+						<div id="message" class="alert alert-success" role="alert">
+							 <span class="fa fa-check-circle" aria-hidden="true"></span>
 							 <span class="sr-only">Info:</span>
-							 <?= $this->lang->line($message)?>. <?php if ($addition) { ?><?= $this->lang->line($addition) ?><?php } ?>
+							 <?=$this->session->flashdata('message')?>
+						</div>
+					<?php } ?>
+					<?php if ($this->session->flashdata('error')!='') { ?>
+						<div id="message" class="alert alert-error" role="alert">
+							 <span class="fa fa-warning" aria-hidden="true"></span>
+							 <span class="sr-only">Info:</span>
+							 <?=$this->session->flashdata('error')?>
 						</div>
 					<?php } ?>
 					<div><button class="btn btn-primary" data-toggle="modal" data-target="#addContent"><i class="fa fa-plus"></i> <?php echo $this->lang->line('manajemen_content_add');?></button></div>
@@ -158,6 +165,7 @@
 													       		</div>
  													       </div>
 													       <div class="form-group">
+													       	    <?=$this->lang->line('suggestion of picture size')?><br><br>
 															    <label for="file" class="col-md-3"><?php echo $this->lang->line('image_content');?></label>
 															    <div class="col-md-9">
 															    	<input type="file" name="path_gambar" class="form-control" required="required">	
@@ -189,7 +197,7 @@
 		</div>
 
 		<!-- Modal -->
-		<div id="addContent" class="modal fade" role="dialog">
+		<div id="addContent" class="modal fade" role="dialog" tabindex="-1">
 		  <div class="modal-dialog">
 
 		    <!-- Modal content-->
@@ -210,6 +218,7 @@
 					<div class="form-group">
 					    <label for="file" class="col-md-3"><?php echo $this->lang->line('image_content');?></label>
 					    <div class="col-md-9">
+					    	<?=$this->lang->line('suggestion of picture size')?> <br><br>	
 					    	<input type="file" name="path_gambar" class="form-control" required="required">	
 					    </div>
 					</div>
@@ -283,15 +292,6 @@
 			       }
 			   }
     		});
-    		var message = '<?=$this->session->flashdata("message")?>';
-    		var error = '<?=$this->session->flashdata("error")?>';
-    		if(message!=''){
-    			$('#contentMessage').modal('show');
-    		}
-
-    		if(error!=''){
-    			$('#contentMessage').modal('show');
-    		}
     	});
     </script>
 </html>

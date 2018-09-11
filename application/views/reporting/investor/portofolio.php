@@ -73,9 +73,6 @@
 					<li><?= $this->lang->line('investor report') ?></li>
 					<li class="active"><?= $this->lang->line('customer portofolio report') ?></li>
 				</ol>
-
-				
-				<br>
 				<div class="panel-body">
 					<div>
 						<div class="btn-group">
@@ -95,6 +92,7 @@
 		                        	<th style="text-align: center;">SID</th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('subreg') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('portofolio amount') ?></th>
+		                        	<th style="text-align: center;">Actions</th>
 					    		</tr>
 							</thead>
 		                    <tbody>
@@ -106,7 +104,8 @@
 		                    	     				<td>'.$value['NAME'].'</td>
 		                    	     				<td>'.$value['SID'].'</td>
 		                    	     				<td>'.$value['SUBREG'].'</td>
-		                    	     				<td style="text-align:center;"><a href="" data-toggle="modal" data-target="#detailPortofolio'.$no.'">'.$value['JUMLAH_PORTOFOLIO'].'</a></td>
+		                    	     				<td style="text-align:center;">'.$value['JUMLAH_PORTOFOLIO'].'</td>
+		                    	     				<td style="text-align: center;"><a href="#" data-toggle="modal" data-target="#detailPortofolio'.$no.'"><i class="fa fa-search"></i></a></td>
 		                    	     			  </tr>'; ?>
 		                    	     			  <!-- Modal -->
 												<div id="detailPortofolio<?=$no?>" class="modal fade" role="dialog">
@@ -126,18 +125,21 @@
 												        	         echo '<div class="rTable">
 																			 <div class="rTableRow">
 																			    <div class="rTableHead" style="width:8% !important;text-align:center;"><strong>No.</strong></div>
-																			 	<div class="rTableHead" style="width:22% !important;text-align:center;"><strong>'.$this->lang->line('ordercode').'</strong></div>
-																			 	<div class="rTableHead" style="width:18% !important;text-align:center;"><strong>'.$this->lang->line('d').'</strong></div>
-																			 	<div class="rTableHead" style="width:22% !important;text-align:center;"><strong>'.$this->lang->line('amount').'</strong></div>
-																			 	<div class="rTableHead" style="width:30% !important;text-align:center;"><strong>Status</strong></div>
+																			 	<div class="rTableHead" style="width:22% !important;text-align:c
+																			 	enter;"><strong>'.$this->lang->line('ordercode').'</strong></div>
+																			 	<div class="rTableHead" style="width:13% !important;text-align:center;"><strong>'.$this->lang->line('seri').'</strong></div>
+																			 	<div class="rTableHead" style="width:14% !important;text-align:center;"><strong>'.$this->lang->line('d').'</strong></div>
+																			 	<div class="rTableHead" style="width:18% !important;text-align:center;"><strong>'.$this->lang->line('amount').'</strong></div>
+																			 	<div class="rTableHead" style="width:25% !important;text-align:center;"><strong>Status</strong></div>
 																			 </div>';
 												        	        foreach ($query as $key) {
 												        	        	echo '<div class="rTableRow">
 												        	              <div class="rTableCell" style="width:8% !important;">'.$s.'.</div>
 												        	              <div class="rTableCell" style="width:22% !important;text-align:center;">'.$key['order_id'].'</div>
-												        	              <div class="rTableCell" style="width:18% !important;text-align:center;">'.date('d-m-Y', strtotime($key['creation_date'])).'</div>
-												        	              <div class="rTableCell" style="width:22% !important;text-align:right;">'.number_format($key['amount'],0,'.',',').'</div>
-												        	              <div class="rTableCell" style="width:30% !important;">'.$key['status'].'</div>
+												        	              <div class="rTableCell" style="width:13% !important;text-align:center;">'.$key['seri_name'].'</div>
+												        	              <div class="rTableCell" style="width:14% !important;text-align:center;">'.date('d-m-Y', strtotime($key['creation_date'])).'</div>
+												        	              <div class="rTableCell" style="width:18% !important;text-align:right;">'.number_format($key['amount'],0,'.',',').'</div>
+												        	              <div class="rTableCell" style="width:25% !important;">'.$key['status'].'</div>
 												        	              </div>';
 												        	              $s++;
 												        	        }

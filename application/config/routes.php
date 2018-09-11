@@ -192,6 +192,7 @@ $route['TransactionReport.jsp/final'] = 'transaction/reporting/final_transaction
 $route['TransactionReport.jsp/final_transaction_export_csv/(:any)'] = 'transaction/reporting/final_transaction_export_csv/$1';
 $route['TransactionReport.jsp/final_transaction_export_xls/(:any)'] = 'transaction/reporting/final_transaction_export_xls/$1';
 $route['TransactionReport.jsp/final_transaction_export_txt/(:any)'] = 'transaction/reporting/final_transaction_export_txt/$1';
+$route['getSeriName.jsp'] = 'transaction/reporting/get_seri_name';
 
 /* routes for transaction contact us */
 $route['FaqBackend.jsp'] = 'contactus/faq/index';

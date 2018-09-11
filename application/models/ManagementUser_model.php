@@ -31,4 +31,11 @@ class ManagementUser_model extends CI_Model
         $this->db->where('ID', $id);
         $this->db->update('user');
     }
+
+    function send_activation($id){
+        $this->db->set('STATUS', '0');
+        $this->db->where('TRXID', $id);
+        $this->db->where('TIPE', '2');
+        $this->db->update('email');
+    }
 }

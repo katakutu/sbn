@@ -22,7 +22,7 @@ class ReportingTransaction_model extends CI_Model
         $this->db->join('user b', 'b.ID=a.uid');
         $this->db->join('sid c', 'c.USERID=b.ID');
         $this->db->join('sec_account d', 'd.id_reksb=a.id_reksb');
-        $this->db->like('a.creation_date', $tgl);
+        $this->db->like('a.seri_name', $tgl);
         $query = $this->db->get();
         return $query->result_array();
     }
