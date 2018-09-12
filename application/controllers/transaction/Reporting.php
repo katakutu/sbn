@@ -20,8 +20,8 @@ class Reporting extends CI_Controller {
 	function daily()
 	{
 		if(isset($_POST['cari'])){
-		  if(isset($_POST['seri']) && $_POST['seri']!=''){
-		    $data['data'] = $this->reportingtransaction_model->get_daily($_POST['seri']);	
+		  if(isset($_POST['tgl']) && $_POST['tgl']!=''){
+		    $data['data'] = $this->reportingtransaction_model->get_daily($_POST['tgl']);	
 		  } else {
 		    $data['data'] = array();	
 		  }
@@ -47,7 +47,7 @@ class Reporting extends CI_Controller {
 		$output = fopen('php://output', 'wb');
 
 		// output the column headings
-		// fputcsv($output, array('NAMA', 'TANGGAL TRANSAKSI', 'NOMOR ORDER', 'STATUS TRANSAKSI'));
+		fputcsv($output, array('NAMA', 'TANGGAL TRANSAKSI', 'NOMOR ORDER', 'STATUS TRANSAKSI'));
 		if($id!=''){
 		  
 		    $data = $this->reportingtransaction_model->get_daily($id);
@@ -152,7 +152,7 @@ class Reporting extends CI_Controller {
 		$output = fopen('php://output', 'wb');
 
 		// output the column headings
-		// fputcsv($output, array('KODE PEMESANAN', 'KODE BILLING', 'NTPN', 'NTB', 'STATUS PEMESANAN', 'SERI', 'MITRA DISTRIBUSI', 'SID', 'NAMA', 'AMOUNT', 'NOMOR REKENING', 'NOMOR IDENTITAS', 'TEMPAT LAHIR', 'TANGGAL LAHIR', 'JENIS KELAMIN', 'PEKERJAAN', 'ALAMAT', 'KODE KOTA', 'KODE PROVINSI', 'NOMOR TELEPON', 'NOMOR HANDPHONE', 'EMAIL', 'TANGGAL PEMESANAN', 'NOMOR REKENING SECURITIES', 'KODE BANK', 'KUSTODIAN'));
+		fputcsv($output, array('KODE PEMESANAN', 'KODE BILLING', 'NTPN', 'NTB', 'STATUS PEMESANAN', 'SERI', 'MITRA DISTRIBUSI', 'SID', 'NAMA', 'AMOUNT', 'NOMOR REKENING', 'NOMOR IDENTITAS', 'TEMPAT LAHIR', 'TANGGAL LAHIR', 'JENIS KELAMIN', 'PEKERJAAN', 'ALAMAT', 'KODE KOTA', 'KODE PROVINSI', 'NOMOR TELEPON', 'NOMOR HANDPHONE', 'EMAIL', 'TANGGAL PEMESANAN', 'NOMOR REKENING SECURITIES', 'KODE BANK', 'KUSTODIAN'));
 		if($id!=''){
 		  
 		    $data = $this->reportingtransaction_model->get_final_transaction_all($id);

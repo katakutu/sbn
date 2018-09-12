@@ -40,7 +40,7 @@ class Investor extends CI_Controller {
 		$output = fopen('php://output', 'wb');
 
 		// output the column headings
-		// fputcsv($output, array('NAMA', 'TANGGAL TRANSAKSI', 'NOMOR ORDER', 'STATUS TRANSAKSI'));
+		fputcsv($output, array('NAMA', 'JENIS KELAMIN', 'EMAIL', 'NOMOR KARTU IDENTITAS', 'NPWP', 'SID', 'SUBREG', 'ALAMAT', 'NOMOR TELEPON', 'NOMOR HANDPHONE', 'NOMOR REKENING', 'TANGGAL REGISTRASI'));
 		$data = $this->reportinginvestor_model->get_statistic_all();
 		foreach ($data as $key) {
 			// if(trim($key) !=''){

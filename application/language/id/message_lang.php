@@ -109,7 +109,8 @@ $lang['i agree pemesanan'] = "Saya menyatakan telah:<br>
 <p style='color:red;'>*Pemesanan yang telah disubmit tidak dapat diubah/dibatalkan dan jika tidak dilakukan pembayaran dalam periode tertentu setelah menerima kode billing maka secara otomatis batal/menjadi kadaluarsa</p>";
 $lang['i agree investor'] = "Saya menyatakan telah:<br>
 					1. mengisi data dengan benar dan lengkap.<br>
-					2. mengerti dan menyetujui ketentuan dan persyaratan penggunaan sistem layanan transaksi SBN Ritel secara elektronik.";
+					2. mengerti dan menyetujui ketentuan dan persyaratan penggunaan sistem layanan transaksi SBN Ritel secara elektronik.<br>
+					3. menyetujui bahwa Mitra distribusi/Pemerintah tidak bertanggung jawab terhadap pembayaran kupon dan/atau pokok SBN Ritel kepada investor dalam hal terdapat kekeliruan data yang disampaikan oleh investor.";
 $lang['i disagree'] = "Saya Tidak Setuju";
 $lang['continue'] = 'Lanjutkan';
 $lang['email invalid'] = "Email tidak valid";
@@ -925,6 +926,8 @@ $lang['message_image_content'] = 'Format gambar : jpg, jpeg, png dan gif<br>Maks
 $lang['status'] = 'Status';
 $lang['upload_date'] = 'Tgl Upload';
 $lang['update_image_content'] = 'Ganti Gambar Konten';
+$lang['content update'] = 'Update Konten';
+$lang['content delete'] = 'Hapus Konten';
 $lang['last_update'] = 'Update Terakhir';
 $lang['publish'] = 'Tampilkan';
 $lang['no_publish'] = 'Tidak ditampilkan';
@@ -950,3 +953,4 @@ $lang['distribution partner'] = 'Mitra Distribusi';
 $lang['securities accountno'] = 'Nomor Rekening Securities';
 $lang['customer portofolio detail'] = 'Detil Portofolio Nasabah';
 $lang['suggestion of picture size'] = 'Anjuran ukuran gambar 965 x 328 pixel';
+$lang['PortofolioDetail'] = 'Detil Portofolio';

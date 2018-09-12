@@ -20,6 +20,13 @@
 	<link rel="stylesheet" href="css/bootstrap.css">
 	<script type="text/javascript" src="js/bootstrap.js"></script>
 	<link rel="stylesheet" href="css/base.css">
+	<style type="text/css">
+		.popover{
+			max-width: 800px;
+		    width:300px;
+    		height:150px;
+		}
+	</style>
 </head>
 
 <body onload="frameload();">
@@ -172,6 +179,13 @@
 <footer class="footer-default">
 	<p class="footer-text">Copyright © 2018 Bank Rakyat Indonesia (Persero) Tbk. All rights reserved.</p>
 </footer>
+<script type="text/javascript">
+	$(function () {
+		$('[data-toggle="popover"]').popover({
+		    container: 'body'
+		});
+	});
+</script>
 <script type="text/javascript">
 	var waitingDialog = waitingDialog || (function ($) {
 		'use strict';

@@ -50,7 +50,7 @@
 		                        	<th style="text-align: center;"><?= $this->lang->line('name') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('gender') ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('email') ?></th>
-		                        	<th style="text-align: center;"><?= $this->lang->line('id card number') ?></th>
+		                        	<th style="text-align: center;"><?= ucwords($this->lang->line('id card number')) ?></th>
 		                        	<th style="text-align: center;"><?= $this->lang->line('npwp number') ?></th>
 		                        	<th style="text-align: center;">SID</th>
 		                        	<th style="text-align: center;">SUBREG</th>

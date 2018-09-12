@@ -19,47 +19,34 @@
 		<script type="text/javascript" src="<?=base_url();?>js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="<?=base_url();?>plugin/bootstrap/js/bootstrap.min.js"></script>
 		<style type="text/css">
-			.panel-primary { border-color: black; }
 			.modal-header {
 				color: #fff;
 			    padding:9px 15px;
-			    border-bottom:1px solid #eee;
-			    background-color: #ec971f;
-			    -webkit-border-top-left-radius: 5px;
-			    -webkit-border-top-right-radius: 5px;
-			    -moz-border-radius-topleft: 5px;
-			    -moz-border-radius-topright: 5px;
-			     border-top-left-radius: 5px;
-			     border-top-right-radius: 5px;
+			    border-bottom:3px solid #000;
+			    background: #ec971f;
 			 }
-				 .rTable {
-				  	display: block;
-				  	width: 100%;
-				  	font-size: 12px;
-				}
-				.rTableHeading, .rTableBody, .rTableFoot, .rTableRow{
+			 .rTableHeading, .rTableBody, .rTableFoot, .rTableRow{
 				  	clear: both;
-				}
-				.rTableHead, .rTableFoot{
-				  	background-color: #2339d8;
+			 }
+			 .rTableHead, .rTableFoot{
+				  	background: #286090;
 				  	font-weight: bold;
 				  	color: #fff;
-				}
-				.rTableCell, .rTableHead {
-				  	border: 1px solid #555;
+			 }
+			 .rTableCell, .rTableHead {
 				  	float: left;
 				  	/*height: 17px;*/
 				  	overflow: hidden;
-				  	padding: 10px;
-				}
-				.rTable:after {
+				  	padding: 5px;
+			 }
+			 .rTable:after {
 				  	 visibility: hidden;
 				  	 display: block;
 				  	 font-size: 0;
 				  	 content: " ";
 				  	 clear: both;
 				  	 height: 0;
-				}
+			 }
 		</style>
 	</head>
 	<body oncontextmenu="return false">
@@ -105,10 +92,10 @@
 		                    	     				<td>'.$value['SID'].'</td>
 		                    	     				<td>'.$value['SUBREG'].'</td>
 		                    	     				<td style="text-align:center;">'.$value['JUMLAH_PORTOFOLIO'].'</td>
-		                    	     				<td style="text-align: center;"><a href="#" data-toggle="modal" data-target="#detailPortofolio'.$no.'"><i class="fa fa-search"></i></a></td>
+		                    	     				<td style="text-align: center;"><a href="#" data-toggle="modal" data-target="#detailPortofolio'.$no.'" rel="tooltip" title="'.$this->lang->line('PortofolioDetail').'"><i class="fa fa-file-text-o"></i></a></td>
 		                    	     			  </tr>'; ?>
 		                    	     			  <!-- Modal -->
-												<div id="detailPortofolio<?=$no?>" class="modal fade" role="dialog">
+												<div id="detailPortofolio<?=$no?>" class="modal modal-lg fade" role="dialog">
 												  <div class="modal-dialog">
 
 												    <!-- Modal content-->
@@ -122,24 +109,23 @@
 												        	      $query = $this->sbn_tambahan->get_portofolio_detail($value['uid']);
 												        	      
 												        	         $s = 1;
-												        	         echo '<div class="rTable">
+												        	         echo '<div class="rTable" style="font-size: 13px;">
 																			 <div class="rTableRow">
-																			    <div class="rTableHead" style="width:8% !important;text-align:center;"><strong>No.</strong></div>
-																			 	<div class="rTableHead" style="width:22% !important;text-align:c
-																			 	enter;"><strong>'.$this->lang->line('ordercode').'</strong></div>
-																			 	<div class="rTableHead" style="width:13% !important;text-align:center;"><strong>'.$this->lang->line('seri').'</strong></div>
-																			 	<div class="rTableHead" style="width:14% !important;text-align:center;"><strong>'.$this->lang->line('d').'</strong></div>
-																			 	<div class="rTableHead" style="width:18% !important;text-align:center;"><strong>'.$this->lang->line('amount').'</strong></div>
-																			 	<div class="rTableHead" style="width:25% !important;text-align:center;"><strong>Status</strong></div>
+																			    <div class="rTableHead" style="width:8% !important;text-align:center;border-left:1px solid #555;border-top:1px solid #555;border-bottom:1px solid #555;"><strong>No.</strong></div>
+																			 	<div class="rTableHead" style="width:22% !important;text-align:center;border-left:1px solid #555;border-top:1px solid #555;border-bottom:1px solid #555;"><strong>'.$this->lang->line('ordercode').'</strong></div>
+																			 	<div class="rTableHead" style="width:13% !important;text-align:center;border-left:1px solid #555;border-top:1px solid #555;border-bottom:1px solid #555;"><strong>'.$this->lang->line('seri').'</strong></div>
+																			 	<div class="rTableHead" style="width:14% !important;text-align:center;border-left:1px solid #555;border-top:1px solid #555;border-bottom:1px solid #555;"><strong>'.$this->lang->line('d').'</strong></div>
+																			 	<div class="rTableHead" style="width:18% !important;text-align:center;border-left:1px solid #555;border-top:1px solid #555;border-bottom:1px solid #555;"><strong>'.$this->lang->line('amount').'</strong></div>
+																			 	<div class="rTableHead" style="width:25% !important;text-align:center;border-left:1px solid #555;border-top:1px solid #555;border-bottom:1px solid #555;border-right:1px solid #555;"><strong>Status</strong></div>
 																			 </div>';
 												        	        foreach ($query as $key) {
 												        	        	echo '<div class="rTableRow">
-												        	              <div class="rTableCell" style="width:8% !important;">'.$s.'.</div>
-												        	              <div class="rTableCell" style="width:22% !important;text-align:center;">'.$key['order_id'].'</div>
-												        	              <div class="rTableCell" style="width:13% !important;text-align:center;">'.$key['seri_name'].'</div>
-												        	              <div class="rTableCell" style="width:14% !important;text-align:center;">'.date('d-m-Y', strtotime($key['creation_date'])).'</div>
-												        	              <div class="rTableCell" style="width:18% !important;text-align:right;">'.number_format($key['amount'],0,'.',',').'</div>
-												        	              <div class="rTableCell" style="width:25% !important;">'.$key['status'].'</div>
+												        	              <div class="rTableCell" style="width:8% !important;border-left:1px solid #555;border-bottom:1px solid #555;">'.$s.'.</div>
+												        	              <div class="rTableCell" style="width:22% !important;text-align:center;border-left:1px solid #555;border-bottom:1px solid #555;">'.$key['order_id'].'</div>
+												        	              <div class="rTableCell" style="width:13% !important;text-align:center;border-left:1px solid #555;border-bottom:1px solid #555;">'.$key['seri_name'].'</div>
+												        	              <div class="rTableCell" style="width:14% !important;text-align:center;border-left:1px solid #555;border-bottom:1px solid #555;">'.date('d-m-Y', strtotime($key['creation_date'])).'</div>
+												        	              <div class="rTableCell" style="width:18% !important;text-align:right;border-left:1px solid #555;border-bottom:1px solid #555;">'.number_format($key['amount'],0,'.',',').'</div>
+												        	              <div class="rTableCell" style="width:25% !important;border-left:1px solid #555;border-bottom:1px solid #555;border-right:1px solid #555;">'.$key['status'].'</div>
 												        	              </div>';
 												        	              $s++;
 												        	        }
@@ -186,6 +172,7 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
     	$(function () {
+    		$('[rel=tooltip]').tooltip();
     		$('#portofolio_reporting').DataTable({
     			responsive: true,
     			language: {

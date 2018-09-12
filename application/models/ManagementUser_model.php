@@ -37,5 +37,10 @@ class ManagementUser_model extends CI_Model
         $this->db->where('TRXID', $id);
         $this->db->where('TIPE', '2');
         $this->db->update('email');
+        if($this->db->affected_rows() > 0){
+          return TRUE;
+        } else {
+          return FALSE;
+        }
     }
 }

@@ -29,8 +29,8 @@ class Users extends CI_Controller {
 		// $name = $this->get_name_user($id);
 		// $this->sbn_email->email_send_activation($email, $name);
         $p = $this->managementuser_model->send_activation($id);
-        if($p){
-          $this->session->set_flashdata('message', $this->lang->line('success_send_link_activation'));    
+        if($p == TRUE){
+          $this->session->set_flashdata('message', $this->lang->line('success_send_link_activation'));
         } else {
           $this->session->set_flashdata('error', $this->lang->line('error_send_link_activation'));  
         }

@@ -64,7 +64,7 @@
 		                    	     				<td style="text-align:center;">'.$value['SID'].'</td>
 		                    	     				<td>'.$value['TITLE'].' '.$value['NAME'].'</td>
 		                    	     				<td>'.$value['EMAIL'].'</td>
-		                    	     				<td style="text-align:center;">'.$value['WRGPASSWORD'].'</td>
+		                    	     				<td style="text-align:center;">'.$value['WRGPASSWORD'].' x</td>
 		                    	     				<td style="text-align:center;"><a href="'.base_url().'UnlockUser.jsp/unlock/'.$value['ID'].'" class="btn btn-success"><i class="fa fa-unlock"></i> '.$this->lang->line('open_unlock').'</a></td>
 		                    	     			  </tr>';
 		                    	     		$no++;

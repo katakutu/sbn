@@ -15,26 +15,22 @@
 		<link rel="stylesheet" href="<?=base_url();?>css/font-awesome.css">
 		<link rel="stylesheet" href="<?=base_url();?>plugin/bootstrap/css/bootstrap.min.css">
 		<link rel="stylesheet" href="<?=base_url();?>plugin/tabmenu/style.css">
-		<link rel="stylesheet" href="<?=base_url();?>css/bootstrap-datepicker.min.css">
 		<script type="text/javascript" src="<?=base_url();?>js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="<?=base_url();?>plugin/bootstrap/js/bootstrap.min.js"></script>
 		<style type="text/css">
-			.panel-primary { border-color: black; }
-			.modal-header {
-				color: #fff;
-			    padding:9px 15px;
-			    border-bottom:1px solid #eee;
-			    background-color: #ec971f;
-			    -webkit-border-top-left-radius: 5px;
-			    -webkit-border-top-right-radius: 5px;
-			    -moz-border-radius-topleft: 5px;
-			    -moz-border-radius-topright: 5px;
-			     border-top-left-radius: 5px;
-			     border-top-right-radius: 5px;
-			 }
+			.accordion .card-header:after {
+	    		font-family: 'FontAwesome';  
+	    		content: "\f068";
+	    		float: right; 
+			}
+			.accordion .card-header.collapsed:after {
+	    		/* symbol for "collapsed" panels */
+	    		content: "\f067"; 
+			}
 		</style>
 	</head>
-	<body oncontextmenu="return false">
+	<body oncontextmenu="return false" style="height: 100%;margin:0;
+overflow: hidden;">
 		<div class="panel panel-primary">
 			<h3 style="text-align: right; padding-right: 25px">
 				<i class="fa fa-feed"></i> <b>FAQ</b>
@@ -44,54 +40,65 @@
 					<li><?= $this->lang->line('contact_us') ?></a></li>
 					<li class="active">FAQ</li>
 				</ol>
-				
+				<br>
 				<div class="panel-body">
 
-					<div class="panel-group" id="faqAccordion" style="height: 100%;">
-				        <div class="panel panel-default">
+					<div class="panel-group" id="faqAccordion" style="margin-bottom: 50px;">
+						<div class="panel panel-default">
 				            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question0">
 				                 <h4 class="panel-title">
 				                    <a href="#" class="ing">Q: Surat Utang Negara (SUN)?</a>
 				              </h4>
 
 				            </div>
-				            <div id="question0" class="panel-collapse collapse" style="height: 0px;">
+				            <div id="question0" class="panel-collapse collapse">
 				                <div class="panel-body">
-				                     <h5><span class="label label-primary">Answer</span></h5>
 				                    <p>
 				                    	Surat berharga yang berupa surat pengakuan utang dalam mata uang Rupiah maupun valuta asing yang dijamin pembayaran bunga dan pokoknya dijamin oleh Negara Republik Indonesia, sesuai dengan masa berlakunya, sebagaimana dimaksud dalam Undang-Undang Nomor 24 Tahun 2002 tentang Surat Utang Negara. 
 				                    </p>
 				                </div>
 				            </div>
 				        </div>
-				        <div class="panel panel-default ">
+				        
+				        <div class="panel panel-default">
 				            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question1">
 				                 <h4 class="panel-title">
 				                    <a href="#" class="ing">Q: Apa yang dimaksud dengan Saving Bonds Ritel (SBR) ?</a>
 				              </h4>
 
 				            </div>
-				            <div id="question1" class="panel-collapse collapse" style="height: 0px;">
+				            <div id="question1" class="panel-collapse collapse">
 				                <div class="panel-body">
-				                     <h5><span class="label label-primary">Answer</span></h5>
-
-				                    <p>Obligasi Negara yang dijual kepada individu perseorangan Warga Negara Indonesia melalui Mitra Distribusi di Pasar Perdana domestik yang tidak dapat diperdagangkan di pasar sekunder.</p>
+				                     <p>Obligasi Negara yang dijual kepada individu perseorangan Warga Negara Indonesia melalui Mitra Distribusi di Pasar Perdana domestik yang tidak dapat diperdagangkan di pasar sekunder.</p>
 				                </div>
 				            </div>
 				        </div>
-				        <div class="panel panel-default ">
+				        <div class="panel panel-default">
 				            <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question2">
 				                 <h4 class="panel-title">
 				                    <a href="#" class="ing">Q: Surat Utang Negara (SUN)?</a>
 				              </h4>
 
 				            </div>
-				            <div id="question2" class="panel-collapse collapse" style="height: 0px;">
+				            <div id="question2" class="panel-collapse collapse">
 				                <div class="panel-body">
-				                     <h5><span class="label label-primary">Answer</span></h5>
 				                    <p>
 				                    	Surat berharga yang berupa surat pengakuan utang dalam mata uang Rupiah maupun valuta asing yang dijamin pembayaran bunga dan pokoknya dijamin oleh Negara Republik Indonesia, sesuai dengan masa berlakunya, sebagaimana dimaksud dalam Undang-Undang Nomor 24 Tahun 2002 tentang Surat Utang Negara. 
 				                    </p>
+				                </div>
+				            </div>
+				        </div>
+				        
+				        <div class="panel panel-default">
+				            <div class="panel-heading accordion-toggle collapsed question-toggle" data-toggle="collapse" data-parent="#faqAccordion" data-target="#question3">
+				                 <h4 class="panel-title">
+				                    <a href="#" class="ing">Q: Apa yang dimaksud dengan Saving Bonds Ritel (SBR) ?</a>
+				              </h4>
+
+				            </div>
+				            <div id="question3" class="panel-collapse collapse">
+				                <div class="panel-body">
+				                     <p>Obligasi Negara yang dijual kepada individu perseorangan Warga Negara Indonesia melalui Mitra Distribusi di Pasar Perdana domestik yang tidak dapat diperdagangkan di pasar sekunder.</p>
 				                </div>
 				            </div>
 				        </div>

@@ -1698,181 +1698,21 @@ ERROR - 2018-09-07 15:41:30 --> Could not find the language line "dt_processsing
 ERROR - 2018-09-07 15:44:01 --> Could not find the language line "dt_page"
 ERROR - 2018-09-07 15:44:01 --> Could not find the language line "dt_page"
 ERROR - 2018-09-07 15:44:01 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:18:56 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:19:03 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:19:06 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:19:06 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:19:06 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:19:22 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:19:22 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:19:22 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:21:27 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:21:30 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:21:32 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:21:33 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:21:33 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:21:37 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:21:37 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:21:37 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:22:54 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:22:56 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:23:00 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:23:00 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:23:00 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:23:59 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:24:01 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:24:06 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:24:06 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:24:06 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:24:34 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:24:36 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:24:42 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:24:42 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:24:42 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:25:50 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:25:54 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:25:59 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:25:59 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:25:59 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:26:06 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:26:06 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:26:06 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:26:10 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:26:10 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:26:10 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 11:27:29 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:27:32 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 11:27:35 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:27:35 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 11:27:35 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:36:27 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:36:27 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:36:28 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:36:34 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:36:40 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:36:40 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:36:41 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:36:41 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:36:41 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:36:42 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:36:42 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:12 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:12 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:12 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:12 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:16 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:19 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:23 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:39:23 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:39:23 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:39:23 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:23 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:24 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:39:24 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:15 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:16 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:16 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:16 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:19 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:23 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:40:23 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:40:23 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:40:23 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:23 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:23 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:40:24 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:01 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:01 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:01 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:07 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:10 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:41:10 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:41:10 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:41:11 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:11 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:11 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:44 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:45 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:41:45 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:14 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:14 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:15 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:23 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:28 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:50:28 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:50:28 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:50:28 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:28 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:28 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:53 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:53 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:50:53 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:53:32 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:53:36 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:53:36 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:53:36 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:53:36 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:53:36 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:53:36 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:07 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:07 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:07 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:07 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:07 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:10 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:14 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:54:14 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:54:14 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:54:15 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:15 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:15 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:15 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:55 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:56 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:56 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:56 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:56 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:54:57 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:55:01 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:55:01 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 19:55:01 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 19:55:01 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:55:01 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 19:55:02 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:26 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:27 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:27 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:31 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:37 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:04:37 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:04:37 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 20:04:38 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:38 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:38 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:38 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:45 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:04:45 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:04:45 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 20:04:46 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:04:46 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:06:48 --> Severity: Warning --> unlink(./content/2018/09/20180904144936.jpg): No such file or directory C:\xampp\htdocs\sbn\application\controllers\manajemen\Content.php 100
-ERROR - 2018-09-07 20:06:49 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:06:49 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:06:49 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 20:06:49 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:06:50 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:07:03 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:07:03 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:07:03 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:07:32 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:07:36 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:07:36 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:07:36 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 20:07:36 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:07:36 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:08:11 --> Severity: Warning --> unlink(./content/2018/09/20180904143711.jpg): No such file or directory C:\xampp\htdocs\sbn\application\controllers\manajemen\Content.php 100
-ERROR - 2018-09-07 20:08:11 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:08:11 --> Could not find the language line "dt_page"
-ERROR - 2018-09-07 20:08:11 --> Could not find the language line "dt_processsing"
-ERROR - 2018-09-07 20:08:39 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
-ERROR - 2018-09-07 20:09:23 --> Severity: error --> Exception: Call to a member function helper() on null C:\xampp\htdocs\sbn\application\hooks\LanguageLoader.php 8
+ERROR - 2018-09-07 16:14:20 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:20 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:20 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-07 16:14:32 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:32 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:32 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-07 16:14:35 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:35 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:35 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-07 16:14:38 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:38 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:38 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-07 16:14:55 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:55 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:14:55 --> Could not find the language line "dt_processsing"
+ERROR - 2018-09-07 16:15:03 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:15:03 --> Could not find the language line "dt_page"
+ERROR - 2018-09-07 16:15:03 --> Could not find the language line "dt_processsing"

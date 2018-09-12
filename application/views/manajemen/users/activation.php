@@ -30,21 +30,22 @@
 					<li class="active"><?= $this->lang->line('manajemen_user') ?></li>
 					<li class="active"><?= $this->lang->line('manajemen_user_reactivation_link') ?></li>
 				</ol>
-				<?php if ($this->session->flashdata('message') != '') { ?>
-					<div id="message" class="alert alert-success" role="alert">
-						 <span class="fa fa-check-circle" aria-hidden="true"></span>
-						 <span class="sr-only">Info:</span>
-						 <?= $this->session->flashdata('message') ?>
-				   </div>
-				<?php } ?>
-				<?php if ($this->session->flashdata('error') != '') { ?>
-					<div id="message" class="alert alert-danger" role="alert">
-						 <span class="fa fa-warning" aria-hidden="true"></span>
-						 <span class="sr-only">Info:</span>
-						 <?= $this->session->flashdata('error') ?>
-				   </div>
-				<?php } ?>
+				
 				<div class="panel-body" style="margin-top: -20px;">
+					<?php if ($this->session->flashdata('message') != '') { ?>
+						<div id="message" class="alert alert-success" role="alert">
+							 <span class="fa fa-check-circle" aria-hidden="true"></span>
+							 <span class="sr-only">Info:</span>
+							 <?= $this->session->flashdata('message') ?>
+					   </div>
+					<?php } ?>
+					<?php if ($this->session->flashdata('error') != '') { ?>
+						<div id="message" class="alert alert-danger" role="alert">
+							 <span class="fa fa-warning" aria-hidden="true"></span>
+							 <span class="sr-only">Info:</span>
+							 <?= $this->session->flashdata('error') ?>
+					   </div>
+					<?php } ?>
 					<div class="table table-responsive">
 		            	<table class="table table-striped table-bordered table-hover" id="manajemen_activation" cellspacing="0" width="100%">
 		                    <thead>

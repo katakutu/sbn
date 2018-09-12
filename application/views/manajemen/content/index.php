@@ -18,6 +18,14 @@
 		<link rel="stylesheet" href="<?=base_url();?>css/bootstrap-datepicker.min.css">
 		<script type="text/javascript" src="<?=base_url();?>js/jquery-2.1.3.min.js"></script>
 		<script type="text/javascript" src="<?=base_url();?>plugin/bootstrap/js/bootstrap.min.js"></script>
+		<style type="text/css">
+			.modal-header {
+				color: #fff;
+			    padding:9px 15px;
+			    border-bottom:3px solid #000;
+			    background: #ec971f;
+			 }
+		</style>
 	</head>
 	<body oncontextmenu="return false">
 		<div class="panel panel-primary">
@@ -70,7 +78,7 @@
 			                    	     	       <td style="text-align:center;">'.(($value['status'] == 1) ? $this->lang->line('publish') : $this->lang->line('no_publish')).'</td>
 			                    	     	       <td style="text-align: center;">'.(($value['tgl_upload'] != NULL || $value['tgl_upload'] != '0000-00-00') ? date('d/m/Y H:i:s', strtotime($value['tgl_upload'])) : '').'</td>
 			                    	     	       <td style="text-align: center;">'.(($value['last_update'] != NULL || $value['last_update'] != '0000-00-00') ? date('d/m/Y H:i:s', strtotime($value['last_update'])) : '').'</td>
-			                    	     	       <td style="text-align:center;"><a href="#" data-toggle="modal" data-target="#changeContent'.$no.'"><i class="fa fa-image"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#updateContent'.$no.'"><i class="fa fa-edit"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#deleteContent'.$no.'"><i class="fa fa-trash"></i></a></td>
+			                    	     	       <td style="text-align:center;"><a href="#" data-toggle="modal" data-target="#changeContent'.$no.'" rel="tooltip" title="'.$this->lang->line('update_image_content').'"><i class="fa fa-image"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#updateContent'.$no.'" rel="tooltip" title="'.$this->lang->line('content update').'"><i class="fa fa-edit"></i></a> &nbsp;&nbsp; <a href="#" data-toggle="modal" data-target="#deleteContent'.$no.'" rel="tooltip" title="'.$this->lang->line('content delete').'"><i class="fa fa-trash"></i></a></td>
 			                    	     		  </tr>';
 			                    	     		  ?>
 			                    	     		    <!-- Modal -->
@@ -277,6 +285,7 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
     	$(function () {
+    		$('[rel=tooltip]').tooltip();
     		$('#manajemen_content').DataTable({
     			language: {
 			       lengthMenu: "<?= $this->lang->line('dt_show') ?> _MENU_ <?= $this->lang->line('dt_record') ?> <?= $this->lang->line('dt_per_page') ?>",
