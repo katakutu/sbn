@@ -11,12 +11,82 @@
 	<link rel="stylesheet" href="<?= base_url() ?>css/bootstrap.css">
 	<link rel="stylesheet" href="<?= base_url() ?>css/bootstrap-datepicker.min.css">
 	<link rel="stylesheet" href="<?= base_url() ?>css/bootstrap-clockpicker.min.css">
+	<link rel="stylesheet" href="<?= base_url() ?>plugin/select2/select2.css">
 	<script type="text/javascript" src="<?= base_url() ?>js/jquery-2.1.4.min.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>js/bootstrap.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>js/bootstrap-datepicker.min.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>js/bootstrap-clockpicker.min.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>js/moment.min.js"></script>
 	<script type="text/javascript" src="<?= base_url() ?>js/autoNumeric.js"></script>
+	<script type="text/javascript" src="<?= base_url() ?>plugin/select2/select2.min.js"></script>
+	<script type="text/javascript">
+		 $(function () {
+                  $('.select2').select2();
+                  $('#getseriname').change(function(){
+                  	   var MaxPemesanan,MinPemesanan,KelipatanPemesanan,KuotaInvestor,KuotaNasional;
+                  	   $('#minorder').val();
+                  	   $('#maxorder').val();
+                  	   $('#multorder').val();
+                  	   $('#seriname').val();
+                  	   $('#seriid').val();
+                  	   $('#quotorder').val();
+                  	   $('#quotordernat').val();
+                  	   $('#totorder').val();
+                  	   var seri = $(this).val();
+                  	   var pisah = seri.split("-");
+                  	   <?php
+                  	         foreach ($get_offer_seri as $key) { ?>
+                  	         	var Seri = '<?php echo $key['Seri'];?>';
+                  	         	
+                  	         	if(Seri == pisah[0]){
+                  	         		MaxPemesanan = '<?php echo $key['MaxPemesanan'];?>';
+                  	         	    MinPemesanan = '<?php echo $key['MinPemesanan'];?>'; 
+                  	         	    KelipatanPemesanan = '<?php echo $key['KelipatanPemesanan'];?>'; 
+                  	         	} 
+                  	    <?php      	
+                  	         } 
+                  	   ?>
+                  	   var postData = {
+					        'idseri': seri
+					    };
+                  	   $.ajax({
+					        type: 'POST',
+					        url: '<?=base_url()?>transaction/pemesanan/get_kuota_seri',
+					        data: postData,
+					        dataType: 'JSON',     
+					        success: function(response)
+					        {
+					        	  KuotaInvestor = response["KuotaInvestor"];
+					        	  KuotaNasional = response["KuotaNasional"];
+					        	  $('#quotorder').val(KuotaInvestor);
+                  	              $('#quotordernat').val(KuotaNasional);
+					        	   
+					        },
+					        error: function(xhr) {
+					        }
+					    });
+                  	    $.ajax({
+					        type: 'POST',
+					        url: '<?=base_url()?>transaction/pemesanan/count_total',
+					        data: postData,
+					        dataType: 'JSON',     
+					        success: function(response)
+					        {
+					        	  $('#totorder').val(response);
+					        	   
+					        },
+					        error: function(xhr) {
+					        }
+					    });
+                  	   $('#seriname').val(pisah[0]);
+                  	   $('#seriid').val(pisah[1]);
+                  	   $('#minorder').val(MinPemesanan);
+                  	   $('#maxorder').val(MaxPemesanan);
+                  	   $('#multorder').val(KelipatanPemesanan);
+                  	   
+                  });
+          });
+	</script>
 </head>
 
 <style type="text/css">
@@ -93,20 +163,35 @@
 					<span id="span_fundaccountid" style="color:red; font-size:11px"><?=form_error('fundaccountid',' ',' ')?></span>
 				</div>
 				<br />
-
+				<?php
+				        //       echo '<pre>';
+						      // print_r($get_offer_seri);
+						      // echo '</pre>';
+						      // exit();
+			    ?>
 				<div class="input-group">
 					<span class="input-group-addon" id="addon-seriname"><?= $this->lang->line('seriname') ?>&nbsp;</span>
-					<input type="text" class="form-control" placeholder="<?= $this->lang->line('seriname') ?>" aria-describedby="addon-seriname" id="seriname" name="seriname" required value="<?php if(isset($seriname))echo $seriname;?>" onkeypress="return false;" autocomplete="off"/>
+					<select id="getseriname" class="form-control select2">
+						<option value=""><?=$this->lang->line('selected_option')?></option>
+						<?php
+
+						      foreach ($get_offer_seri as $key) {
+						       	  echo '<option value="'.$key['Seri'].'-'.$key['Id'].'">'.$key['Seri'].'</option>';
+						      } 
+						?>
+					</select>
+					<!-- <input type="text" class="form-control" placeholder="<?= $this->lang->line('seriname') ?>" aria-describedby="addon-seriname" id="seriname" name="seriname" required value="<?php if(isset($seriname))echo $seriname;?>" onkeypress="return false;" autocomplete="off"/>
 					<span class="input-group-addon">
 						<a href="#">
 							<i class="fa fa-search" onClick="parent.PopupModal('<?=$this->lang->line('seriname') ?>', 'ListSeriOffer.jsp/SeriOffer', 'show');" id="SEARCH_seriname" name="SEARCH_seriname">
 							</i>
 						</a>
-					</span>
+					</span> -->
 				</div>
 				<div>
 					<span id="span_seriname" style="color:red; font-size:11px"><?=form_error('seriname',' ',' ')?></span>
 					<input type="hidden" id="seriid" name="seriid" value="<?php if(isset($seriid))echo $seriid;?>" />
+					<input type="hidden" class="form-control" id="seriname" name="seriname"/>
 				</div>
 				<br />
 
@@ -118,7 +203,7 @@
 					<div class="panel-body">
 						<div class="input-group input-group-sm">
 							<span class="input-group-addon" id="addon-minorder"><?= $this->lang->line('minorder') ?>&nbsp;</span>
-							<input type="text" class="form-control" placeholder="<?= $this->lang->line('minorder') ?>" aria-describedby="addon-minorder" id="minorder" name="minorder" value="<?php if(isset($val_min))echo $val_min;?>" readonly />
+							<input type="text" class="form-control" placeholder="<?= $this->lang->line('minorder') ?>" aria-describedby="addon-minorder" id="minorder" name="minorder" readonly />
 							<span class="input-group-addon">
 								IDR
 							</span>
@@ -127,7 +212,7 @@
 					<div class="panel-body">
 						<div class="input-group input-group-sm">
 							<span class="input-group-addon" id="addon-maxorder"><?= $this->lang->line('maxorder') ?>&nbsp;</span>
-							<input type="text" class="form-control" placeholder="<?= $this->lang->line('maxorder') ?>" aria-describedby="addon-maxorder" id="maxorder" name="maxorder" value="<?php if(isset($val_max))echo $val_max;?>" readonly />
+							<input type="text" class="form-control" placeholder="<?= $this->lang->line('maxorder') ?>" aria-describedby="addon-maxorder" id="maxorder" name="maxorder" readonly />
 							<span class="input-group-addon">
 								IDR
 							</span>
@@ -136,7 +221,7 @@
 					<div class="panel-body">
 						<div class="input-group input-group-sm">
 							<span class="input-group-addon" id="addon-multorder"><?= $this->lang->line('multorder') ?>&nbsp;</span>
-							<input type="text" class="form-control" placeholder="<?= $this->lang->line('multorder') ?>" aria-describedby="addon-multorder" id="multorder" name="multorder" value="<?php if(isset($multorder))echo $multorder;?>" readonly />
+							<input type="text" class="form-control" placeholder="<?= $this->lang->line('multorder') ?>" aria-describedby="addon-multorder" id="multorder" name="multorder" readonly />
 							<span class="input-group-addon">
 								IDR
 							</span>
@@ -145,7 +230,7 @@
 					<div class="panel-body">
 						<div class="input-group input-group-sm">
 							<span class="input-group-addon" id="addon-totorder"><?= $this->lang->line('totorder') ?>&nbsp;</span>
-							<input type="text" class="form-control" placeholder="<?= $this->lang->line('totorder') ?>" aria-describedby="addon-totorder" id="totorder" name="totorder" value="<?php if(isset($totorder))echo $totorder;?>" readonly />
+							<input type="text" class="form-control" placeholder="<?= $this->lang->line('totorder') ?>" aria-describedby="addon-totorder" id="totorder" name="totorder" readonly />
 							<span class="input-group-addon">
 								IDR
 							</span>
@@ -154,7 +239,7 @@
 					<div class="panel-body">
 						<div class="input-group input-group-sm">
 							<span class="input-group-addon" id="addon-quotorder"><?= $this->lang->line('quotorder') ?>&nbsp;</span>
-							<input type="text" class="form-control" placeholder="<?= $this->lang->line('quotorder') ?>" aria-describedby="addon-quotorder" id="quotorder" name="quotorder" value="<?php if(isset($quotorder))echo $quotorder;?>" readonly />
+							<input type="text" class="form-control" placeholder="<?= $this->lang->line('quotorder') ?>" aria-describedby="addon-quotorder" id="quotorder" name="quotorder" readonly />
 							<span class="input-group-addon">
 								IDR
 							</span>
@@ -163,7 +248,7 @@
 					<div class="panel-body">
 						<div class="input-group input-group-sm">
 							<span class="input-group-addon" id="addon-quotordernat"><?= $this->lang->line('quotordernat') ?>&nbsp;</span>
-							<input type="text" class="form-control" placeholder="<?= $this->lang->line('quotordernat') ?>" aria-describedby="addon-quotordernat" id="quotordernat" name="quotordernat" value="<?php if(isset($quotordernat))echo $quotordernat;?>" readonly />
+							<input type="text" class="form-control" placeholder="<?= $this->lang->line('quotordernat') ?>" aria-describedby="addon-quotordernat" id="quotordernat" name="quotordernat" readonly />
 							<span class="input-group-addon">
 								IDR
 							</span>

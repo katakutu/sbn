@@ -15,6 +15,7 @@ class Parameter_helper
 	public $ibank_mdw 	= "http://10.35.65.191:7000/?wsdl";
 	public $medalion_mdw 	= "http://10.35.65.191:5050/MedalionMiddleware.asmx?wsdl";
 	public $serverid	= "10.35.65.38";
+	public $ip_intranet_sbn = "https://test-apisbn.kemenkeu.go.id"; //load balancer
 
 	public $kodefundaccountbri = "42";
 	public $kodesecaccountbri = "398";

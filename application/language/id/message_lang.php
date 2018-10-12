@@ -103,8 +103,10 @@ $lang['info_activation'] = "Silahkan tunjukkan <b>nomor referensi</b> ke kantor 
 $lang['send'] = "Kirim";
 $lang['i agree'] = "Saya menyatakan mengerti, menyetujui isi Memorandum Informasi dan data yang saya isi sudah benar";
 $lang['i agree pemesanan'] = "Saya menyatakan telah:<br>
-1. membaca dan mengerti isi Memorandum Informasi.<br>
-2. menyampaikan data pemesanan dengan benar dan lengkap.<br>
+1. Membaca dan mengerti isi Memorandum Informasi.<br>
+2. Menyampaikan data pemesanan dengan benar dan lengkap.<br>
+3. Pemesanan yang telah disubmit tidak dapat diubah/dibatalkan dan jika tidak dilakukan pembayaran dalam periode tertentu setelah menerima kode billing maka secara otomatis batal/menjadi kadaluarsa.
+<br>
 
 <p style='color:red;'>*Pemesanan yang telah disubmit tidak dapat diubah/dibatalkan dan jika tidak dilakukan pembayaran dalam periode tertentu setelah menerima kode billing maka secara otomatis batal/menjadi kadaluarsa</p>";
 $lang['i agree investor'] = "Saya menyatakan telah:<br>
@@ -954,3 +956,5 @@ $lang['securities accountno'] = 'Nomor Rekening Securities';
 $lang['customer portofolio detail'] = 'Detil Portofolio Nasabah';
 $lang['suggestion of picture size'] = 'Anjuran ukuran gambar 965 x 328 pixel';
 $lang['PortofolioDetail'] = 'Detil Portofolio';
+
+$lang['payment limit'] = 'Batas Pembayaran';

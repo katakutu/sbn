@@ -65,6 +65,9 @@ class Pemesanan extends CI_Controller {
 					$data['msg_type'] = 'danger';
 					$data['msg_icon'] = 'remove-sign';
 				}
+				$url = $this->parameter_helper->ip_intranet_sbn.'/v1/seri/offer';
+				$get_offer_seri = $this->sbn_kemenkeuapi->get_data_api_return_json_decode($url);
+				$data['get_offer_seri'] = $get_offer_seri;
 				if(!empty($data_confirm)) $data_add = array_merge($data, $data_confirm);
 				else $data_add = $data;
 
@@ -307,6 +310,10 @@ class Pemesanan extends CI_Controller {
 	    	flash_err($this->lang->line("msg_failed_unreg_investor")); 
     		$this->load->view('investor/message');
     	}
+    	// $url = $this->parameter_helper->ip_intranet_sbn.'/v1/pemesanan/seri/all/'.$Uid;
+    	// $order = $this->sbn_kemenkeuapi->get_data_api_direct_echo($url);
+    	// var_dump($order);
+    	// exit();
 	}
 
 	function mpn_view($message = '', $addition = '')

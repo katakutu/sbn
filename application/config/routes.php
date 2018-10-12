@@ -157,6 +157,7 @@ $route['Sid.jsp/(:any)'] = 'investor/Sid/$1';
 $route['Subreg.jsp/(:any)'] = 'investor/Subreg/$1';
 $route['Pemesanan.jsp/(:any)'] = 'transaction/Pemesanan/$1';
 $route['Redemption.jsp/(:any)'] = 'transaction/Redemption/$1';
+$route['GetKouta.jsp'] = 'transaction/Pemesanan/get_kuota_seri';
 
 $route['Api.jsp/(:any)'] = 'api/statusbayar/$1';
 

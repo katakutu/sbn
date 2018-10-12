@@ -37,6 +37,7 @@
 		                    <thead>
 		                        <tr>
 		                        	<th><?= $this->lang->line('creation date') ?></th>
+		                        	<th><?= $this->lang->line('payment limit') ?></th>
 			        				<th><?= $this->lang->line('ordercode') ?></th>
 			        				<th><?= $this->lang->line('billcode') ?></th>
 			        				<th><?= $this->lang->line('amount') ?></th>
@@ -101,6 +102,8 @@
         "columns": [{ 
         		"data": "TglPemesanan"
         	},{ 
+    			"data": "BatasPembayaran"
+    		},{ 
     			"data": "KodePemesanan"
     		},{ 
 				"data": "KodeBilling"

@@ -975,3 +975,5 @@ $lang['securities accountno'] = 'Securities Account Number';
 $lang['customer portofolio detail'] = 'Customer Portofolio Detail';
 $lang['suggestion of picture size'] = 'Suggestion of picture size 965 x 328 pixel';
 $lang['PortofolioDetail'] = 'Portofolio Detail';
+
+$lang['payment limit'] = 'Payment Limit';
